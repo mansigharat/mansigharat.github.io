@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Mansi Gharat | Aspiring Backend AI Engineer</title>
+  <meta name="title" content="Mansi Gharat | Aspiring Backend AI Engineer">
+  <meta name="description" content="Portfolio of Mansi Gharat, Computer Engineering student and aspiring Backend AI Engineer specializing in Python backend architecture, API engineering, SQL databases, and intelligent AI agent workflows.">
+  <meta name="keywords" content="Mansi Gharat, Backend Engineer, AI Engineer, Python, FastAPI, Django, LangChain, LLM Agents, SQL, Portfolio">
+  <meta name="author" content="Mansi Gharat">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mansigharat.github.io/">
+  <meta property="og:title" content="Mansi Gharat | Aspiring Backend AI Engineer">
+  <meta property="og:description" content="Computer Engineering student passionate about building scalable backend systems and intelligent AI applications.">
+  <meta property="og:image" content="https://mansigharat.github.io/Profile_Pic.jpeg">
+
+  <!-- Twitter Card -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://mansigharat.github.io/">
+  <meta property="twitter:title" content="Mansi Gharat | Aspiring Backend AI Engineer">
+  <meta property="twitter:description" content="Computer Engineering student passionate about building scalable backend systems and intelligent AI applications.">
+  <meta property="twitter:image" content="https://mansigharat.github.io/Profile_Pic.jpeg">
+
+  <!-- Google Fonts: Playfair Display (Serif luxury headings) & Inter (Sans-serif body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Accessible Skip to Main Content Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Custom Ambient Cursor (Enabled only on devices with fine pointer) -->
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- Background Ambient Glow Accents -->
+  <div class="ambient-gradient ambient-gradient-top" aria-hidden="true"></div>
+  <div class="ambient-gradient ambient-gradient-bottom" aria-hidden="true"></div>
+
+  <!-- Header / Navigation Bar -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo" aria-label="Mansi Gharat Home">
+        <span class="brand-monogram">MG</span>
+        <span class="brand-name">Mansi Gharat</span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Action & Mobile Menu Toggle -->
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-outline btn-sm nav-cta">Get in Touch</a>
+        
+        <button 
+          type="button" 
+          class="mobile-toggle" 
+          id="mobileMenuToggle" 
+          aria-label="Toggle navigation menu" 
+          aria-expanded="false" 
+          aria-controls="mobileNav"
+        >
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+      <div class="mobile-nav-inner">
+        <ul class="mobile-nav-list">
+          <li><a href="#hero" class="mobile-nav-link">Home</a></li>
+          <li><a href="#about" class="mobile-nav-link">About</a></li>
+          <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+          <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+          <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+        </ul>
+        <div class="mobile-nav-footer">
+          <p class="mobile-nav-email">mansigharat1909@gmail.com</p>
+          <div class="mobile-social-links">
+            <a href="https://github.com/mansigharat/" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+              <svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/mansigharat/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+              <svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+            </a>
+            <a href="mailto:mansigharat1909@gmail.com" aria-label="Send Email">
+              <svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Landmark -->
+  <main id="main-content">
+
+    <!-- 1. HERO SECTION -->
+    <section class="hero-section" id="hero" aria-label="Hero Section">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <!-- Availability Badge -->
+          <div class="hero-badge reveal" data-reveal>
+            <span class="badge-dot"></span>
+            <span class="badge-text">Third-Year Computer Engineering &bull; Aspiring Backend AI Engineer</span>
+          </div>
+
+          <!-- Editorial Name Heading -->
+          <h1 class="hero-title reveal" data-reveal>
+            Mansi <span class="text-gold italic">Gharat</span>
+          </h1>
+
+          <!-- Role & Tagline -->
+          <p class="hero-subtitle reveal" data-reveal>
+            Building resilient backend architectures, production APIs, and autonomous AI agents designed to solve real-world problems.
+          </p>
+
+          <p class="hero-tagline reveal" data-reveal>
+            Dedicated to clean system design, scalable data layers, and bringing emerging LLM engineering to life with reliability and elegance.
+          </p>
+
+          <!-- Call to Action Buttons -->
+          <div class="hero-actions reveal" data-reveal>
+            <a href="#projects" class="btn btn-primary">
+              <span>View My Work</span>
+              <svg class="btn-icon" viewBox="0 0 20 20" width="16" height="16" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <span>Contact Me</span>
+            </a>
+          </div>
+
+          <!-- Quick Metric Strip -->
+          <div class="hero-metrics reveal" data-reveal>
+            <div class="metric-item">
+              <span class="metric-value">3+</span>
+              <span class="metric-label">Years Academic Rigor</span>
+            </div>
+            <div class="metric-divider" aria-hidden="true"></div>
+            <div class="metric-item">
+              <span class="metric-value">Python & AI</span>
+              <span class="metric-label">Core Specialization</span>
+            </div>
+            <div class="metric-divider" aria-hidden="true"></div>
+            <div class="metric-item">
+              <span class="metric-value">Production</span>
+              <span class="metric-label">Focus & Quality</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Luxury Backend AI Terminal / Architecture Visual -->
+        <div class="hero-visual reveal" data-reveal>
+          <!-- Floating Badge: Top Right -->
+          <div class="hero-floating-badge badge-top-right">
+            <span class="pulse-indicator" aria-hidden="true"></span>
+            <span class="badge-text">AI Agent Pipeline &bull; Active</span>
+          </div>
+
+          <!-- Main Obsidian Glass Terminal -->
+          <div class="hero-terminal">
+            <div class="terminal-header">
+              <div class="terminal-dots" aria-hidden="true">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-amber"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <div class="terminal-title">mansi_agent_runtime.py</div>
+              <div class="terminal-status">
+                <span class="status-chip">FASTAPI &bull; 200 OK</span>
+              </div>
+            </div>
+
+            <div class="terminal-body">
+              <div class="code-lines" aria-label="Sample backend AI code snippet">
+                <div class="code-line"><span class="code-kw">from</span> <span class="code-var">fastapi</span> <span class="code-kw">import</span> <span class="code-cls">FastAPI</span></div>
+                <div class="code-line"><span class="code-kw">from</span> <span class="code-var">langchain.agents</span> <span class="code-kw">import</span> <span class="code-cls">AgentExecutor</span></div>
+                <div class="code-line"><span class="code-kw">from</span> <span class="code-var">pydantic</span> <span class="code-kw">import</span> <span class="code-cls">BaseModel</span></div>
+                <div class="code-line empty">&nbsp;</div>
+                <div class="code-line"><span class="code-var">app</span> = <span class="code-cls">FastAPI</span>(<span class="code-param">title</span>=<span class="code-str">"MansiAI.Engine"</span>)</div>
+                <div class="code-line empty">&nbsp;</div>
+                <div class="code-line"><span class="code-decorator">@app.post</span>(<span class="code-str">"/v1/diagnose"</span>)</div>
+                <div class="code-line"><span class="code-kw">async def</span> <span class="code-fn">execute_agent</span>(<span class="code-param">payload</span>: <span class="code-cls">SymptomSchema</span>):</div>
+                <div class="code-line indent-1"><span class="code-comment"># Query SQL DB &amp; synthesize via LLM Agent</span></div>
+                <div class="code-line indent-1"><span class="code-var">context</span> = <span class="code-kw">await</span> <span class="code-var">db</span>.<span class="code-fn">fetch_records</span>(payload.<span class="code-var">patient_id</span>)</div>
+                <div class="code-line indent-1"><span class="code-var">agent</span> = <span class="code-cls">AgentExecutor</span>(<span class="code-param">llm</span>=<span class="code-cls">GroqLLM</span>(), <span class="code-param">tools</span>=<span class="code-var">tools</span>)</div>
+                <div class="code-line indent-1"><span class="code-kw">return await</span> <span class="code-var">agent</span>.<span class="code-fn">ainvoke</span>({<span class="code-str">"ctx"</span>: <span class="code-var">context</span>})</div>
+              </div>
+
+              <!-- Telemetry Metrics Bar inside terminal -->
+              <div class="terminal-telemetry">
+                <div class="telemetry-stat">
+                  <span class="stat-label">LATENCY</span>
+                  <span class="stat-val text-gold">24ms</span>
+                </div>
+                <div class="telemetry-stat">
+                  <span class="stat-label">LLM ENGINE</span>
+                  <span class="stat-val">Groq / Gemini</span>
+                </div>
+                <div class="telemetry-stat">
+                  <span class="stat-label">STACK</span>
+                  <span class="stat-val">FastAPI &bull; SQL</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Badge: Bottom Left -->
+          <div class="hero-floating-badge badge-bottom-left">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="8" rx="2"></rect>
+              <rect x="2" y="14" width="20" height="8" rx="2"></rect>
+              <line x1="6" y1="6" x2="6.01" y2="6"></line>
+              <line x1="6" y1="18" x2="6.01" y2="18"></line>
+            </svg>
+            <span class="badge-text">Docker &bull; Production Ready</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Subtle Hero Scroll Prompt -->
+      <a href="#about" class="hero-scroll-indicator" aria-label="Scroll to About section">
+        <span class="scroll-mouse" aria-hidden="true">
+          <span class="scroll-wheel"></span>
+        </span>
+        <span class="scroll-text">Scroll to explore</span>
+      </a>
+    </section>
+
+    <!-- 2. ABOUT SECTION -->
+    <section class="about-section section-padding" id="about" aria-label="About Section">
+      <div class="container">
+        <div class="section-header text-center reveal" data-reveal>
+          <span class="section-eyebrow">Biography</span>
+          <h2 class="section-title">About <span class="text-gold italic">Me</span></h2>
+          <div class="gold-line" aria-hidden="true"></div>
+        </div>
+
+        <div class="about-grid">
+          <!-- Photo Column with Elegant Gold Border Frame -->
+          <div class="about-visual reveal" data-reveal>
+            <div class="luxury-frame">
+              <div class="luxury-frame-border" aria-hidden="true"></div>
+              <div class="luxury-frame-glow" aria-hidden="true"></div>
+              
+              <!-- Profile Picture in Luxury Frame -->
+              <img src="Profile_Pic.jpeg" alt="Mansi Gharat - Aspiring Backend AI Engineer" class="photo-image">
+            </div>
+
+            <!-- Frame Sub-badge -->
+            <div class="frame-status">
+              <span class="status-indicator"></span>
+              <span>Based in India &bull; Open to Remote Opportunities</span>
+            </div>
+          </div>
+
+          <!-- Text Column -->
+          <div class="about-content reveal" data-reveal>
+            <h3 class="about-headline">
+              Engineering scalable foundations and intelligent agency with deliberate craftsmanship.
+            </h3>
+            
+            <p class="about-lead">
+              I'm a Computer Engineering student passionate about building scalable backend systems and intelligent applications. My focus is Python backend development, API design, database management and AI engineering.
+            </p>
+            
+            <p class="about-body">
+              I enjoy solving real-world problems with clean, efficient code, and I'm continuously growing my skills to build reliable, production-ready software. I'm also deeply interested in emerging AI technologies.
+            </p>
+
+            <!-- Focus Highlights Grid -->
+            <div class="about-highlights">
+              <div class="highlight-card">
+                <div class="highlight-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                    <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                    <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                    <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                  </svg>
+                </div>
+                <div class="highlight-info">
+                  <h4 class="highlight-title">Backend Architecture</h4>
+                  <p class="highlight-desc">High-throughput REST APIs, clean MVC/layered patterns, and resilient services.</p>
+                </div>
+              </div>
+
+              <div class="highlight-card">
+                <div class="highlight-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <path d="M12 2a10 10 0 0 0-7.07 17.07A9.97 9.97 0 0 0 12 22a9.97 9.97 0 0 0 7.07-2.93A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8.01 8.01 0 0 1-8 8z"/>
+                    <path d="M12 6v6l4 2"/>
+                  </svg>
+                </div>
+                <div class="highlight-info">
+                  <h4 class="highlight-title">AI & Agentic Systems</h4>
+                  <p class="highlight-desc">Autonomous LLM agent workflows, prompt engineering, and structured outputs.</p>
+                </div>
+              </div>
+
+              <div class="highlight-card">
+                <div class="highlight-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                  </svg>
+                </div>
+                <div class="highlight-info">
+                  <h4 class="highlight-title">Data & Relational Modeling</h4>
+                  <p class="highlight-desc">Optimized SQL query performance, schema design, and ACID integrity.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Profile Action Links -->
+            <div class="about-actions">
+              <a href="https://github.com/mansigharat/" target="_blank" rel="noopener noreferrer" class="text-link">
+                <span>View GitHub Repositories</span>
+                <svg viewBox="0 0 20 20" width="14" height="14" fill="currentColor" aria-hidden="true">
+                  <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/>
+                  <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/>
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/in/mansigharat/" target="_blank" rel="noopener noreferrer" class="text-link">
+                <span>Connect on LinkedIn</span>
+                <svg viewBox="0 0 20 20" width="14" height="14" fill="currentColor" aria-hidden="true">
+                  <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/>
+                  <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SKILLS SECTION -->
+    <section class="skills-section section-padding" id="skills" aria-label="Skills Section">
+      <div class="container">
+        <div class="section-header text-center reveal" data-reveal>
+          <span class="section-eyebrow">Technical Expertise</span>
+          <h2 class="section-title">Core <span class="text-gold italic">Competencies</span></h2>
+          <p class="section-desc">
+            Focused capabilities grouped across engineering domains, built with production-first best practices.
+          </p>
+          <div class="gold-line" aria-hidden="true"></div>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Card 1: Backend -->
+          <article class="skill-card reveal" data-reveal>
+            <div class="skill-card-inner">
+              <div class="skill-card-header">
+                <div class="skill-icon-wrapper" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                </div>
+                <div class="skill-header-meta">
+                  <span class="skill-index">01</span>
+                  <h3 class="skill-card-title">Backend</h3>
+                </div>
+              </div>
+              <p class="skill-card-desc">
+                Designing robust servers, asynchronous API layers, and maintainable enterprise application backends.
+              </p>
+              <div class="skill-tags">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Django</span>
+                <span class="skill-tag">FastAPI</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Data -->
+          <article class="skill-card reveal" data-reveal>
+            <div class="skill-card-inner">
+              <div class="skill-card-header">
+                <div class="skill-icon-wrapper" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7">
+                    <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                  </svg>
+                </div>
+                <div class="skill-header-meta">
+                  <span class="skill-index">02</span>
+                  <h3 class="skill-card-title">Data</h3>
+                </div>
+              </div>
+              <p class="skill-card-desc">
+                Relational schema design, complex query execution, index optimization, and reliable transaction guarantees.
+              </p>
+              <div class="skill-tags">
+                <span class="skill-tag">SQL</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: DevOps -->
+          <article class="skill-card reveal" data-reveal>
+            <div class="skill-card-inner">
+              <div class="skill-card-header">
+                <div class="skill-icon-wrapper" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7">
+                    <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                    <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                    <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                    <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                  </svg>
+                </div>
+                <div class="skill-header-meta">
+                  <span class="skill-index">03</span>
+                  <h3 class="skill-card-title">DevOps</h3>
+                </div>
+              </div>
+              <p class="skill-card-desc">
+                Containerizing microservices, ensuring reproducible build environments, and streamlining local orchestration.
+              </p>
+              <div class="skill-tags">
+                <span class="skill-tag">Docker</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: AI Engineering -->
+          <article class="skill-card reveal" data-reveal>
+            <div class="skill-card-inner">
+              <div class="skill-card-header">
+                <div class="skill-icon-wrapper" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                </div>
+                <div class="skill-header-meta">
+                  <span class="skill-index">04</span>
+                  <h3 class="skill-card-title">AI Engineering</h3>
+                </div>
+              </div>
+              <p class="skill-card-desc">
+                Synthesizing Large Language Models into practical agentic loops, prompt crafting, and tool augmentation.
+              </p>
+              <div class="skill-tags">
+                <span class="skill-tag">LangChain</span>
+                <span class="skill-tag">LLM SDKs</span>
+                <span class="skill-tag">Prompt Engineering</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. PROJECTS SECTION -->
+    <section class="projects-section section-padding" id="projects" aria-label="Projects Section">
+      <div class="container">
+        <div class="section-header text-center reveal" data-reveal>
+          <span class="section-eyebrow">Featured Portfolio</span>
+          <h2 class="section-title">Selected <span class="text-gold italic">Works</span></h2>
+          <p class="section-desc">
+            A curated showcase of backend systems, intelligent AI applications, and full-stack solutions.
+          </p>
+          <div class="gold-line" aria-hidden="true"></div>
+        </div>
+
+        <!-- Filter Chips -->
+        <div class="project-filters reveal" data-reveal role="tablist" aria-label="Filter Projects">
+          <button type="button" class="filter-chip active" data-filter="all" role="tab" aria-selected="true">
+            <span>All Projects</span>
+            <span class="filter-count">3</span>
+          </button>
+          <button type="button" class="filter-chip" data-filter="ai" role="tab" aria-selected="false">
+            <span>AI</span>
+            <span class="filter-count">2</span>
+          </button>
+          <button type="button" class="filter-chip" data-filter="full-stack" role="tab" aria-selected="false">
+            <span>Full-Stack</span>
+            <span class="filter-count">1</span>
+          </button>
+        </div>
+
+        <!-- Projects Grid: Exactly 3 items -->
+        <div class="projects-grid" id="projectsGrid">
+
+          <!-- PROJECT 1: Patient Health Assistant Agent -->
+          <article class="project-card reveal" data-reveal data-category="ai">
+            <div class="project-card-inner">
+              <!-- Visual Mockup Banner -->
+              <div class="project-image-wrap">
+                <!-- 
+                  CUSTOMIZATION: To use an image file, replace this mockup container with:
+                  <img src="project1.jpg" alt="Patient Health Assistant Agent preview" class="project-img">
+                -->
+                <div class="project-mockup mockup-ai">
+                  <div class="mockup-pattern" aria-hidden="true"></div>
+                  <div class="mockup-badge">AI Assistant &bull; Agentic Workflow</div>
+                  <div class="mockup-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.4">
+                      <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                    </svg>
+                  </div>
+                  <span class="mockup-code-line">AGENT_STATUS: ACTIVE // DIAGNOSTIC_LOOP</span>
+                </div>
+                <div class="project-category-tag">AI</div>
+              </div>
+
+              <!-- Card Content -->
+              <div class="project-content">
+                <h3 class="project-title">Patient Health Assistant Agent</h3>
+                <p class="project-description">
+                  An AI-powered patient management system that manages patient records and analyzes symptoms using an intelligent AI agent.
+                </p>
+
+                <!-- Tech Tags -->
+                <div class="project-tags" aria-label="Technologies used">
+                  <span class="tag">Python</span>
+                  <span class="tag">FastAPI</span>
+                  <span class="tag">LLM / AI Agent</span>
+                  <span class="tag">SQL</span>
+                </div>
+
+                <!-- Action Buttons: Live button hidden as specified -->
+                <div class="project-actions">
+                  <a href="https://github.com/mansigharat/patient-health-assistant-agent" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" aria-label="View Patient Health Assistant Agent source code on GitHub">
+                    <svg class="btn-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                    <span>GitHub</span>
+                  </a>
+                  <!-- Live button is intentionally omitted for this project -->
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: AI Resume Screener -->
+          <article class="project-card reveal" data-reveal data-category="ai">
+            <div class="project-card-inner">
+              <!-- Visual Mockup Banner -->
+              <div class="project-image-wrap">
+                <!-- 
+                  CUSTOMIZATION: To use an image file, replace this mockup container with:
+                  <img src="project2.jpg" alt="AI Resume Screener preview" class="project-img">
+                -->
+                <div class="project-mockup mockup-screener">
+                  <div class="mockup-pattern" aria-hidden="true"></div>
+                  <div class="mockup-badge">Groq API &bull; Evaluation Engine</div>
+                  <div class="mockup-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.4">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                      <polyline points="14 2 14 8 20 8"></polyline>
+                      <line x1="16" y1="13" x2="8" y2="13"></line>
+                      <line x1="16" y1="17" x2="8" y2="17"></line>
+                      <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                  </div>
+                  <span class="mockup-code-line">EVAL_SCORE: 94/100 // PYDANTIC_VALIDATED</span>
+                </div>
+                <div class="project-category-tag">AI</div>
+              </div>
+
+              <!-- Card Content -->
+              <div class="project-content">
+                <h3 class="project-title">AI Resume Screener</h3>
+                <p class="project-description">
+                  An AI-powered tool that evaluates resumes, generates a score out of 100, and gives structured feedback to help candidates improve their applications.
+                </p>
+
+                <!-- Tech Tags -->
+                <div class="project-tags" aria-label="Technologies used">
+                  <span class="tag">Python</span>
+                  <span class="tag">FastAPI</span>
+                  <span class="tag">Groq API</span>
+                  <span class="tag">Pydantic</span>
+                  <span class="tag">HTML/CSS/JS</span>
+                </div>
+
+                <!-- Action Buttons: Live button hidden as specified -->
+                <div class="project-actions">
+                  <a href="https://github.com/mansigharat/ai-resume-screener" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" aria-label="View AI Resume Screener source code on GitHub">
+                    <svg class="btn-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                    <span>GitHub</span>
+                  </a>
+                  <!-- Live button is intentionally omitted for this project -->
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 3: RuralCare -->
+          <article class="project-card reveal" data-reveal data-category="full-stack">
+            <div class="project-card-inner">
+              <!-- Visual Mockup Banner -->
+              <div class="project-image-wrap">
+                <!-- 
+                  CUSTOMIZATION: To use an image file, replace this mockup container with:
+                  <img src="project3.jpg" alt="RuralCare Healthcare Platform preview" class="project-img">
+                -->
+                <div class="project-mockup mockup-rural">
+                  <div class="mockup-pattern" aria-hidden="true"></div>
+                  <div class="mockup-badge">Full-Stack &bull; Geolocation Healthcare</div>
+                  <div class="mockup-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.4">
+                      <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+                      <line x1="8" y1="2" x2="8" y2="18"></line>
+                      <line x1="16" y1="6" x2="16" y2="22"></line>
+                    </svg>
+                  </div>
+                  <span class="mockup-code-line">OPENSTREETMAP // INVENTORY_SYNC // REACT</span>
+                </div>
+                <div class="project-category-tag">Full-Stack</div>
+              </div>
+
+              <!-- Card Content -->
+              <div class="project-content">
+                <h3 class="project-title">RuralCare - Rural Healthcare Access Platform</h3>
+                <p class="project-description">
+                  A full-stack healthcare platform that helps people in rural areas find nearby medical facilities, check doctor availability and medicine stock, and access healthcare information.
+                </p>
+
+                <!-- Tech Tags -->
+                <div class="project-tags" aria-label="Technologies used">
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">React</span>
+                  <span class="tag">Leaflet / OpenStreetMap</span>
+                  <span class="tag">Vercel</span>
+                </div>
+
+                <!-- Action Buttons: Includes GitHub and clearly marked Live demo placeholder -->
+                <div class="project-actions">
+                  <a href="https://github.com/mansigharat/RuralCare" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" aria-label="View RuralCare source code on GitHub">
+                    <svg class="btn-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 21.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                    <span>GitHub</span>
+                  </a>
+
+                  <!-- 
+                    ==========================================================
+                    CUSTOMIZATION INSTRUCTION: LIVE URL PLACEHOLDER
+                    Replace 'https://ruralcare-demo.vercel.app' with your actual live URL
+                    ==========================================================
+                  -->
+                  <a href="https://ruralcare-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-gold-link btn-sm" aria-label="Visit RuralCare Live Demo (Placeholder link)">
+                    <span>Live Demo</span>
+                    <svg class="btn-icon" viewBox="0 0 20 20" width="14" height="14" fill="currentColor" aria-hidden="true">
+                      <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/>
+                      <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. CONTACT SECTION -->
+    <section class="contact-section section-padding" id="contact" aria-label="Contact Section">
+      <div class="container">
+        <div class="section-header text-center reveal" data-reveal>
+          <span class="section-eyebrow">Initiate Contact</span>
+          <h2 class="section-title">Get in <span class="text-gold italic">Touch</span></h2>
+          <p class="section-desc">
+            Have a project in mind, an internship opportunity, or wish to discuss backend and AI engineering? Let's connect.
+          </p>
+          <div class="gold-line" aria-hidden="true"></div>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Channels Info Column -->
+          <div class="contact-info reveal" data-reveal>
+            <h3 class="contact-info-title">Let's build something exceptional together</h3>
+            <p class="contact-info-desc">
+              I am actively seeking backend engineering and AI engineering internships, collaborative open-source ventures, and research-focused software roles.
+            </p>
+
+            <div class="contact-methods">
+              <!-- Email Card -->
+              <a href="mailto:mansigharat1909@gmail.com" class="contact-method-card">
+                <div class="method-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                  </svg>
+                </div>
+                <div class="method-details">
+                  <span class="method-label">Direct Email</span>
+                  <span class="method-value">mansigharat1909@gmail.com</span>
+                </div>
+                <div class="method-arrow" aria-hidden="true">&rarr;</div>
+              </a>
+
+              <!-- LinkedIn Card -->
+              <a href="https://www.linkedin.com/in/mansigharat/" target="_blank" rel="noopener noreferrer" class="contact-method-card">
+                <div class="method-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  </svg>
+                </div>
+                <div class="method-details">
+                  <span class="method-label">LinkedIn Profile</span>
+                  <span class="method-value">linkedin.com/in/mansigharat</span>
+                </div>
+                <div class="method-arrow" aria-hidden="true">&rarr;</div>
+              </a>
+
+              <!-- GitHub Card -->
+              <a href="https://github.com/mansigharat/" target="_blank" rel="noopener noreferrer" class="contact-method-card">
+                <div class="method-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                </div>
+                <div class="method-details">
+                  <span class="method-label">GitHub Repositories</span>
+                  <span class="method-value">github.com/mansigharat</span>
+                </div>
+                <div class="method-arrow" aria-hidden="true">&rarr;</div>
+              </a>
+            </div>
+
+            <!-- Fast Copy Email Action -->
+            <div class="copy-email-box">
+              <span class="copy-label">Quick Copy:</span>
+              <button type="button" class="btn-copy-email" id="copyEmailBtn" aria-label="Copy email address to clipboard">
+                <span id="copyEmailText">mansigharat1909@gmail.com</span>
+                <span class="copy-feedback" id="copyFeedback" aria-live="polite"></span>
+                <svg class="copy-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Contact Form Column -->
+          <div class="contact-form-wrap reveal" data-reveal>
+            <!-- 
+              ==========================================================
+              BACKEND FORM SUBMISSION NOTE:
+              This form is equipped with full client-side validation.
+              To connect real email submissions:
+              - FORMSPREE: Add action="https://formspree.io/f/YOUR_FORM_ID" method="POST"
+              - NETLIFY: Add name="contact" netlify data-netlify="true" netlify-honeypot="bot-field"
+              ==========================================================
+            -->
+            <form class="contact-form" id="contactForm" novalidate>
+              <div class="form-header">
+                <h3 class="form-title">Send a Direct Message</h3>
+                <p class="form-subtitle">All inquiries receive a response within 24 hours.</p>
+              </div>
+
+              <!-- Full Name Field -->
+              <div class="form-group" id="groupName">
+                <label for="contactName" class="form-label">
+                  Your Name <span class="required" aria-hidden="true">*</span>
+                </label>
+                <div class="input-wrapper">
+                  <input 
+                    type="text" 
+                    id="contactName" 
+                    name="name" 
+                    class="form-control" 
+                    placeholder="e.g. John Doe" 
+                    required 
+                    autocomplete="name"
+                    aria-required="true"
+                    aria-describedby="nameError"
+                  >
+                </div>
+                <span class="form-error" id="nameError" aria-live="polite"></span>
+              </div>
+
+              <!-- Email Field -->
+              <div class="form-group" id="groupEmail">
+                <label for="contactEmail" class="form-label">
+                  Your Email Address <span class="required" aria-hidden="true">*</span>
+                </label>
+                <div class="input-wrapper">
+                  <input 
+                    type="email" 
+                    id="contactEmail" 
+                    name="email" 
+                    class="form-control" 
+                    placeholder="e.g. john@company.com" 
+                    required 
+                    autocomplete="email"
+                    aria-required="true"
+                    aria-describedby="emailError"
+                  >
+                </div>
+                <span class="form-error" id="emailError" aria-live="polite"></span>
+              </div>
+
+              <!-- Message Field -->
+              <div class="form-group" id="groupMessage">
+                <label for="contactMessage" class="form-label">
+                  Message <span class="required" aria-hidden="true">*</span>
+                </label>
+                <div class="input-wrapper">
+                  <textarea 
+                    id="contactMessage" 
+                    name="message" 
+                    class="form-control form-textarea" 
+                    rows="5" 
+                    placeholder="Tell me about your project, role, or ideas..." 
+                    required 
+                    aria-required="true"
+                    aria-describedby="messageError"
+                  ></textarea>
+                </div>
+                <span class="form-error" id="messageError" aria-live="polite"></span>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="form-action">
+                <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
+                  <span class="btn-text">Transmit Message</span>
+                  <svg class="btn-icon" viewBox="0 0 20 20" width="16" height="16" fill="currentColor" aria-hidden="true">
+                    <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/>
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Success Notification Box (Initially Hidden) -->
+              <div class="form-success" id="formSuccess" role="alert" aria-live="assertive" hidden>
+                <div class="success-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                </div>
+                <div class="success-content">
+                  <h4 class="success-title">Message Delivered Successfully</h4>
+                  <p class="success-desc">Thank you for reaching out, Mansi will review your note and respond promptly.</p>
+                  <button type="button" class="btn btn-outline btn-sm reset-form-btn" id="resetFormBtn">Send Another Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 6. FOOTER -->
+  <footer class="site-footer" id="siteFooter">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#hero" class="brand-logo" aria-label="Back to top">
+            <span class="brand-monogram">MG</span>
+            <span class="brand-name">Mansi Gharat</span>
+          </a>
+          <p class="footer-motto">
+            Architecting intelligent backend systems &amp; elegant software solutions.
+          </p>
+        </div>
+
+        <!-- Social Links with Accessible Inline SVGs -->
+        <div class="footer-socials" aria-label="Social Profiles">
+          <a href="https://github.com/mansigharat/" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="GitHub Profile">
+            <svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/mansigharat/" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="LinkedIn Profile">
+            <svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+          </a>
+          <a href="mailto:mansigharat1909@gmail.com" class="social-circle" aria-label="Email Mansi Gharat">
+            <svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">
+          &copy; <span id="currentYear">2026</span> Mansi Gharat. All rights reserved.
+        </p>
+        <p class="footer-credit">
+          Crafted with pure HTML, CSS &amp; Vanilla JavaScript.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button type="button" class="back-to-top" id="backToTop" aria-label="Back to top of page">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
