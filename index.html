@@ -27,10 +27,10 @@
   <meta property="twitter:description" content="Computer Engineering student passionate about building scalable backend systems and intelligent AI applications.">
   <meta property="twitter:image" content="https://mansigharat.github.io/Profile_Pic.jpeg">
 
-  <!-- Google Fonts: Playfair Display (Serif luxury headings) & Inter (Sans-serif body) -->
+  <!-- Google Fonts: Inter (Sans-serif) & JetBrains Mono (Monospace for code/tags) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="style.css">
@@ -125,30 +125,23 @@
     <section class="hero-section" id="hero" aria-label="Hero Section">
       <div class="container hero-container">
         <div class="hero-content">
-          <!-- Availability Badge -->
-          <div class="hero-badge reveal" data-reveal>
-            <span class="badge-dot"></span>
-            <span class="badge-text">Third-Year Computer Engineering &bull; Aspiring Backend AI Engineer</span>
-          </div>
+          <!-- Engineer Name Heading: Single color, crisp white -->
+          <h1 class="hero-title reveal" data-reveal>Mansi Gharat</h1>
 
-          <!-- Editorial Name Heading -->
-          <h1 class="hero-title reveal" data-reveal>
-            Mansi <span class="text-gold italic">Gharat</span>
-          </h1>
-
-          <!-- Role & Tagline -->
-          <p class="hero-subtitle reveal" data-reveal>
-            Building resilient backend architectures, production APIs, and autonomous AI agents designed to solve real-world problems.
+          <!-- Role -->
+          <p class="hero-role reveal" data-reveal>
+            Aspiring Backend &amp; AI Systems Engineer
           </p>
 
+          <!-- Tagline -->
           <p class="hero-tagline reveal" data-reveal>
-            Dedicated to clean system design, scalable data layers, and bringing emerging LLM engineering to life with reliability and elegance.
+            Building resilient backend architectures, production APIs, and autonomous AI agents designed to solve real-world problems.
           </p>
 
           <!-- Call to Action Buttons -->
           <div class="hero-actions reveal" data-reveal>
             <a href="#projects" class="btn btn-primary">
-              <span>View My Work</span>
+              <span>View Projects</span>
               <svg class="btn-icon" viewBox="0 0 20 20" width="16" height="16" fill="currentColor" aria-hidden="true">
                 <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
               </svg>
@@ -157,35 +150,10 @@
               <span>Contact Me</span>
             </a>
           </div>
-
-          <!-- Quick Metric Strip -->
-          <div class="hero-metrics reveal" data-reveal>
-            <div class="metric-item">
-              <span class="metric-value">3+</span>
-              <span class="metric-label">Years Academic Rigor</span>
-            </div>
-            <div class="metric-divider" aria-hidden="true"></div>
-            <div class="metric-item">
-              <span class="metric-value">Python & AI</span>
-              <span class="metric-label">Core Specialization</span>
-            </div>
-            <div class="metric-divider" aria-hidden="true"></div>
-            <div class="metric-item">
-              <span class="metric-value">Production</span>
-              <span class="metric-label">Focus & Quality</span>
-            </div>
-          </div>
         </div>
 
-        <!-- Right Side: Luxury Backend AI Terminal / Architecture Visual -->
+        <!-- Right Side: Clean Engineering Terminal Card -->
         <div class="hero-visual reveal" data-reveal>
-          <!-- Floating Badge: Top Right -->
-          <div class="hero-floating-badge badge-top-right">
-            <span class="pulse-indicator" aria-hidden="true"></span>
-            <span class="badge-text">AI Agent Pipeline &bull; Active</span>
-          </div>
-
-          <!-- Main Obsidian Glass Terminal -->
           <div class="hero-terminal">
             <div class="terminal-header">
               <div class="terminal-dots" aria-hidden="true">
@@ -219,7 +187,7 @@
               <div class="terminal-telemetry">
                 <div class="telemetry-stat">
                   <span class="stat-label">LATENCY</span>
-                  <span class="stat-val text-gold">24ms</span>
+                  <span class="stat-val">24ms</span>
                 </div>
                 <div class="telemetry-stat">
                   <span class="stat-label">LLM ENGINE</span>
@@ -231,17 +199,6 @@
                 </div>
               </div>
             </div>
-          </div>
-
-          <!-- Floating Badge: Bottom Left -->
-          <div class="hero-floating-badge badge-bottom-left">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <rect x="2" y="2" width="20" height="8" rx="2"></rect>
-              <rect x="2" y="14" width="20" height="8" rx="2"></rect>
-              <line x1="6" y1="6" x2="6.01" y2="6"></line>
-              <line x1="6" y1="18" x2="6.01" y2="18"></line>
-            </svg>
-            <span class="badge-text">Docker &bull; Production Ready</span>
           </div>
         </div>
       </div>
@@ -260,18 +217,14 @@
       <div class="container">
         <div class="section-header text-center reveal" data-reveal>
           <span class="section-eyebrow">Biography</span>
-          <h2 class="section-title">About <span class="text-gold italic">Me</span></h2>
-          <div class="gold-line" aria-hidden="true"></div>
+          <h2 class="section-title">About Me</h2>
         </div>
 
         <div class="about-grid">
-          <!-- Photo Column with Elegant Gold Border Frame -->
+          <!-- Photo Column with Clean Technical Border Frame -->
           <div class="about-visual reveal" data-reveal>
-            <div class="luxury-frame">
-              <div class="luxury-frame-border" aria-hidden="true"></div>
-              <div class="luxury-frame-glow" aria-hidden="true"></div>
-              
-              <!-- Profile Picture in Luxury Frame -->
+            <div class="profile-frame">
+              <!-- Profile Picture in Clean Frame -->
               <img src="Profile_Pic.jpeg" alt="Mansi Gharat - Aspiring Backend AI Engineer" class="photo-image">
             </div>
 
@@ -368,11 +321,10 @@
       <div class="container">
         <div class="section-header text-center reveal" data-reveal>
           <span class="section-eyebrow">Technical Expertise</span>
-          <h2 class="section-title">Core <span class="text-gold italic">Competencies</span></h2>
+          <h2 class="section-title">Core Competencies</h2>
           <p class="section-desc">
             Focused capabilities grouped across engineering domains, built with production-first best practices.
           </p>
-          <div class="gold-line" aria-hidden="true"></div>
         </div>
 
         <div class="skills-grid">
@@ -486,11 +438,10 @@
       <div class="container">
         <div class="section-header text-center reveal" data-reveal>
           <span class="section-eyebrow">Featured Portfolio</span>
-          <h2 class="section-title">Selected <span class="text-gold italic">Works</span></h2>
+          <h2 class="section-title">Selected Works</h2>
           <p class="section-desc">
             A curated showcase of backend systems, intelligent AI applications, and full-stack solutions.
           </p>
-          <div class="gold-line" aria-hidden="true"></div>
         </div>
 
         <!-- Filter Chips -->
@@ -673,7 +624,7 @@
                     Replace 'https://ruralcare-demo.vercel.app' with your actual live URL
                     ==========================================================
                   -->
-                  <a href="https://ruralcare-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-gold-link btn-sm" aria-label="Visit RuralCare Live Demo (Placeholder link)">
+                  <a href="https://ruralcare-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" aria-label="Visit RuralCare Live Demo (Placeholder link)">
                     <span>Live Demo</span>
                     <svg class="btn-icon" viewBox="0 0 20 20" width="14" height="14" fill="currentColor" aria-hidden="true">
                       <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/>
@@ -694,11 +645,10 @@
       <div class="container">
         <div class="section-header text-center reveal" data-reveal>
           <span class="section-eyebrow">Initiate Contact</span>
-          <h2 class="section-title">Get in <span class="text-gold italic">Touch</span></h2>
+          <h2 class="section-title">Get in Touch</h2>
           <p class="section-desc">
             Have a project in mind, an internship opportunity, or wish to discuss backend and AI engineering? Let's connect.
           </p>
-          <div class="gold-line" aria-hidden="true"></div>
         </div>
 
         <div class="contact-grid">
