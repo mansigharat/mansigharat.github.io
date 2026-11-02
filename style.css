@@ -718,8 +718,38 @@ img, svg {
   font-size: 1.05rem;
   color: var(--text-secondary);
   line-height: 1.65;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
   max-width: 540px;
+}
+
+/* Hero Availability Status Badge */
+.hero-availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: rgba(45, 212, 191, 0.08);
+  border: 1px solid rgba(45, 212, 191, 0.25);
+  font-family: var(--font-mono);
+  font-size: 0.775rem;
+  color: var(--accent-primary);
+  margin-bottom: 28px;
+  max-width: fit-content;
+}
+
+.availability-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--accent-primary);
+  box-shadow: 0 0 10px var(--accent-primary);
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
 }
 
 .hero-actions {
@@ -1089,7 +1119,7 @@ img, svg {
 
 @media (min-width: 1024px) {
   .skills-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -1266,9 +1296,10 @@ img, svg {
   }
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 1200px) {
   .projects-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
   }
 }
 
@@ -1430,8 +1461,203 @@ img, svg {
   border-top: 1px solid var(--border-color);
 }
 
+/* Project Role & Achievement Badges */
+.project-achievement-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  margin-bottom: 14px;
+  border-radius: var(--radius-sm);
+  background: rgba(45, 212, 191, 0.1);
+  border: 1px solid rgba(45, 212, 191, 0.35);
+  color: var(--accent-primary);
+  font-family: var(--font-mono);
+  font-size: 0.775rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.project-role-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  margin-bottom: 14px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.project-sublist {
+  margin: 12px 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.project-subitem {
+  font-size: 0.825rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  padding-left: 16px;
+  position: relative;
+}
+
+.project-subitem::before {
+  content: "•";
+  position: absolute;
+  left: 2px;
+  color: var(--accent-primary);
+}
+
+.project-subitem strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.project-feature-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0 16px;
+}
+
+.feature-pill {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 3px 8px;
+}
+
 /* --------------------------------------------------------------------------
-   12. CONTACT SECTION
+   12. ACHIEVEMENTS SECTION
+   -------------------------------------------------------------------------- */
+.achievements-section {
+  position: relative;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.achievement-card {
+  height: 100%;
+}
+
+.achievement-card-inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+  transition: transform var(--transition-base),
+              border-color var(--transition-base),
+              box-shadow var(--transition-base),
+              background-color var(--transition-base);
+  position: relative;
+}
+
+.achievement-card:hover .achievement-card-inner {
+  transform: translateY(-4px);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-accent-hover);
+  background-color: var(--bg-card-hover);
+}
+
+.achievement-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.achievement-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: rgba(45, 212, 191, 0.08);
+  border: 1px solid rgba(45, 212, 191, 0.22);
+  color: var(--accent-primary);
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.achievement-card:hover .achievement-icon-wrapper {
+  transform: scale(1.05);
+  box-shadow: 0 0 16px var(--accent-glow);
+}
+
+.achievement-category {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+  background: rgba(45, 212, 191, 0.06);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(45, 212, 191, 0.2);
+}
+
+.achievement-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  line-height: 1.35;
+}
+
+.achievement-desc {
+  font-size: 0.885rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.achievement-footer {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.achievement-meta {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   13. CONTACT SECTION
    -------------------------------------------------------------------------- */
 .contact-grid {
   display: grid;
@@ -1870,13 +2096,18 @@ img, svg {
 
 /* Stagger delay for adjacent reveal elements */
 .skills-grid .reveal:nth-child(1) { transition-delay: 0.04s; }
-.skills-grid .reveal:nth-child(2) { transition-delay: 0.12s; }
-.skills-grid .reveal:nth-child(3) { transition-delay: 0.20s; }
-.skills-grid .reveal:nth-child(4) { transition-delay: 0.28s; }
+.skills-grid .reveal:nth-child(2) { transition-delay: 0.10s; }
+.skills-grid .reveal:nth-child(3) { transition-delay: 0.16s; }
+.skills-grid .reveal:nth-child(4) { transition-delay: 0.22s; }
+.skills-grid .reveal:nth-child(5) { transition-delay: 0.28s; }
 
 .projects-grid .reveal:nth-child(1) { transition-delay: 0.04s; }
-.projects-grid .reveal:nth-child(2) { transition-delay: 0.12s; }
-.projects-grid .reveal:nth-child(3) { transition-delay: 0.20s; }
+.projects-grid .reveal:nth-child(2) { transition-delay: 0.10s; }
+.projects-grid .reveal:nth-child(3) { transition-delay: 0.16s; }
+.projects-grid .reveal:nth-child(4) { transition-delay: 0.22s; }
+
+.achievements-grid .reveal:nth-child(1) { transition-delay: 0.04s; }
+.achievements-grid .reveal:nth-child(2) { transition-delay: 0.12s; }
 
 /* --------------------------------------------------------------------------
    16. ACCESSIBILITY: PREFERS REDUCED MOTION

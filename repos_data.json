@@ -1,0 +1,152 @@
+{
+  "ai-code-review-bot": {
+    "meta": {
+      "name": "ai-code-review-bot",
+      "description": "A FastAPI backend that fetches Python files from any public GitHub repo and reviews them using Google Gemini AI.",
+      "branch": "master",
+      "topics": [
+        "ai",
+        "automation",
+        "code-review",
+        "developer-tools",
+        "fastapi",
+        "gemini-api",
+        "google-gemini",
+        "python",
+        "rest-api",
+        "uvicorn"
+      ],
+      "language": "Python",
+      "html_url": "https://github.com/Atharva9988/ai-code-review-bot"
+    },
+    "files": [
+      ".gitignore",
+      "README.md",
+      "app",
+      "app/__init__.py",
+      "app/github_fetcher.py",
+      "app/main.py",
+      "app/reviewer.py",
+      "requirements.txt"
+    ],
+    "readme": "# AI Code Review Bot\n\nAn AI-powered backend tool that automatically reviews Python code from any public GitHub repository using Google Gemini API.\n\n## What it does\n\n- Accepts a public GitHub repository URL\n- Fetches Python files from the repository\n- Sends each file to Gemini AI for review\n- Returns structured feedback with severity level, issues, improvements, and a score\n\n## Tech Stack\n\n- Python 3.11\n- FastAPI\n- Google Gemini API\n- Requests\n- Uvicorn\n\n## Project Structure\n\n```\nai-code-review-bot/\n├── app/\n│   ├── __init__.py\n│   ├── main.py\n│   ├── reviewer.py\n│   └── github_fetcher.py\n├── .env\n├── .gitignore\n├── requirements.txt\n└── README.md\n```\n\n## Setup Instructions\n\n1. Clone the repository\n```\ngit clone https://github.com/Atharva9988/ai-code-review-bot.git\ncd ai-code-review-bot\n```\n\n2. Create virtual environment\n```\npy -3.11 -m venv venv\nvenv\\Scripts\\activate\n```\n\n3. Install dependencies\n```\npip install -r requirements.txt\n```\n\n4. Create a `.env` file in the root folder\n```\nGEMINI_API_KEY=your_gemini_api_key_here\n```\n\n5. Run the server\n```\nuvicorn app.main:app --reload\n```\n\n6. Open your browser and go to\n```\nhttp://localhost:8000/docs\n```\n\n## API Usage\n\n### POST /review\n\nSend a public GitHub repo URL and get back AI-generated code reviews.\n\nRequest body:\n```json\n{\n  \"repo_url\": \"https://github.com/username/repository\"\n}\n```\n\nResponse:\n```json\n{\n  \"repo\": \"https://github.com/username/repository\",\n  \"total_files_reviewed\": 3,\n  \"reviews\": [\n    {\n      \"filename\": \"main.py\",\n      \"review\": \"SEVERITY: Warning\\nISSUES:\\n- Missing error handling\\nIMPROVEMENTS:\\n- Add try/except blocks\\nSCORE: 6\\nSUMMARY: ...\"\n    }\n  ]\n}\n```\n\n## Environment Variables\n\n| Variable | Description |\n|----------|-------------|\n| GEMINI_API_KEY | Your Google Gemini API key from aistudio.google.com |\n\n## Author\n\nAtharva9988"
+  },
+  "Resume-Screener": {
+    "meta": {
+      "name": "Resume-Screener",
+      "description": null,
+      "branch": "main",
+      "topics": [],
+      "language": "Python",
+      "html_url": "https://github.com/Atharva9988/Resume-Screener"
+    },
+    "files": [
+      ".gitignore",
+      "main.py"
+    ],
+    "readme": "404: Not Found"
+  },
+  "LLM-Chatbot": {
+    "meta": {
+      "name": "LLM-Chatbot",
+      "description": null,
+      "branch": "main",
+      "topics": [],
+      "language": "Python",
+      "html_url": "https://github.com/Atharva9988/LLM-Chatbot"
+    },
+    "files": [
+      ".gitignore",
+      "main.py",
+      "requirements.txt"
+    ],
+    "readme": "404: Not Found"
+  },
+  "medicine-manager": {
+    "meta": {
+      "name": "medicine-manager",
+      "description": "A web app to track, manage, and get reminders for daily medicines built with JavaScript and Firebase",
+      "branch": "main",
+      "topics": [
+        "firebase",
+        "firebase-hosting",
+        "healthcare",
+        "javascript",
+        "medicine-tracker",
+        "pwa",
+        "vanilla-javascript",
+        "web-app"
+      ],
+      "language": "JavaScript",
+      "html_url": "https://github.com/Atharva9988/medicine-manager"
+    },
+    "files": [
+      ".expo",
+      ".expo/README.md",
+      ".expo/devices.json",
+      ".firebase",
+      ".firebase/hosting.ZGlzdA.cache",
+      ".firebaserc",
+      ".gitignore",
+      "README.md",
+      "eslint.config.js",
+      "firebase.json",
+      "index.html",
+      "package-lock.json",
+      "package.json",
+      "public",
+      "public/favicon.svg",
+      "public/icon-192.png",
+      "public/icon-512.png",
+      "public/icons.svg",
+      "public/manifest.json",
+      "public/sw.js",
+      "src",
+      "src/App.css",
+      "src/App.jsx",
+      "src/ThemeContext.jsx",
+      "src/assets",
+      "src/assets/hero.png",
+      "src/assets/react.svg",
+      "src/assets/vite.svg",
+      "src/firebase",
+      "src/firebase/firebase.js",
+      "src/index.css",
+      "src/main.jsx",
+      "src/pages",
+      "src/pages/AddMedicine.jsx",
+      "src/pages/Alarms.jsx",
+      "src/pages/Dashboard.jsx",
+      "src/pages/ExportPDF.jsx",
+      "src/pages/History.jsx",
+      "src/pages/Interactions.jsx",
+      "src/pages/Login.jsx",
+      "src/pages/MedicineDetail.jsx",
+      "src/pages/Pharmacy.jsx",
+      "src/pages/Prescription.jsx",
+      "src/pages/Refill.jsx",
+      "src/pages/Scanner.jsx",
+      "vite.config.js"
+    ],
+    "readme": "# React + Vite\n\nThis template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.\n\nCurrently, two official plugins are available:\n\n- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)\n- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)\n\n## React Compiler\n\nThe React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).\n\n## Expanding the ESLint configuration\n\nIf you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.\n"
+  },
+  "weather-app": {
+    "meta": {
+      "name": "weather-app",
+      "description": "A Python-based weather application that fetches real-time weather data using the OpenWeather API and displays current conditions through a simple command-line interface.",
+      "branch": "main",
+      "topics": [],
+      "language": "Python",
+      "html_url": "https://github.com/Atharva9988/weather-app"
+    },
+    "files": [
+      ".gitignore",
+      "README.md",
+      "app.py",
+      "main.py",
+      "requirements.txt",
+      "weather.json"
+    ],
+    "readme": "# 🌦️ Weather App\n\nA Python command-line application that fetches real-time weather information for multiple cities concurrently using asynchronous programming. The application retrieves data from the OpenWeather API, displays the results in the terminal, and stores them in a JSON file for later use.\n\n---\n\n## ✨ Features\n\n- Fetches real-time weather data for multiple cities\n- Uses asynchronous programming with `asyncio` and `httpx`\n- Retrieves current temperature and weather description\n- Saves weather data to a JSON file\n- Uses environment variables to securely manage API keys\n- Lightweight and easy to extend\n\n---\n\n## 🛠️ Technologies Used\n\n- Python 3\n- asyncio\n- httpx\n- python-dotenv\n- OpenWeather API\n- JSON\n\n---\n\n## 📁 Project Structure\n\n```text\nweather-app/\n│── main.py\n│── requirements.txt\n│── .gitignore\n│── README.md\n│── weather.json          # Generated after running the program\n└── .env                  # Create this yourself (not included)\n```\n\n---\n\n## 🚀 Setup\n\n### 1. Clone the repository\n\n```bash\ngit clone https://github.com/Atharva9988/weather-app.git\ncd weather-app\n```\n\n### 2. Create a virtual environment\n\n**Windows**\n\n```bash\npython -m venv venv\nvenv\\Scripts\\activate\n```\n\n**Linux / macOS**\n\n```bash\npython3 -m venv venv\nsource venv/bin/activate\n```\n\n### 3. Install the required dependencies\n\n```bash\npip install -r requirements.txt\n```\n\n### 4. Obtain an OpenWeather API Key\n\nCreate a free account at:\n\nhttps://openweathermap.org/api\n\nGenerate an API key.\n\n### 5. Create a `.env` file\n\nCreate a file named `.env` in the project root and add:\n\n```env\nOPENWEATHER_API_KEY=your_api_key_here\n```\n\nReplace `your_api_key_here` with your actual API key.\n\n---\n\n## ▶️ How to Run\n\nExecute the application using:\n\n```bash\npython main.py\n```\n\n---\n\n## 📤 Output\n\n### Terminal Output\n\nThe application fetches weather information for the configured cities and displays:\n\n- City Name\n- Temperature (°C)\n- Weather Description\n\nExample:\n\n```text\n------------------------------\nCity: Mumbai\nTemperature: 30°C\nDescription: Clear Sky\n\n------------------------------\nCity: Delhi\nTemperature: 36°C\nDescription: Haze\n\n------------------------------\nCity: Pune\nTemperature: 28°C\nDescription: Broken Clouds\n```\n\n---\n\n### JSON Output\n\nAfter successful execution, a file named **`weather.json`** is created in the project directory.\n\nExample:\n\n```json\n[\n    {\n        \"city\": \"Mumbai\",\n        \"temperature\": 30,\n        \"description\": \"Clear Sky\"\n    },\n    {\n        \"city\": \"Delhi\",\n        \"temperature\": 36,\n        \"description\": \"Haze\"\n    },\n    {\n        \"city\": \"Pune\",\n        \"temperature\": 28,\n        \"description\": \"Broken Clouds\"\n    }\n]\n```\n\n---\n\n## 📋 Requirements\n\n- Python 3.10 or later\n- Internet connection\n- OpenWeather API Key\n\n---\n\n## 🔮 Future Improvements\n\n- Accept city names as user input\n- Add humidity and wind speed\n- Display weather icons\n- Support 5-day weather forecasts\n- Export weather data to CSV\n- Build a graphical user interface (GUI)\n\n---\n\n## 🤝 Contributing\n\nContributions are welcome. Feel free to fork the repository, create a feature branch, and submit a pull request.\n\n---\n\n## 📄 License\n\nThis project is licensed under the MIT License.\n\n---\n\n## 👨‍💻 Author\n\n**Atharva Thorve**\n\nGitHub: https://github.com/Atharva9988\n"
+  }
+}
