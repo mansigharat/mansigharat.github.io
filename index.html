@@ -3,1070 +3,478 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  
-  <!-- Primary SEO Meta Tags -->
-  <title>Mansi Gharat | Computer Engineering Student | Aspiring Backend Developer &amp; AI Engineer</title>
-  <meta name="title" content="Mansi Gharat | Computer Engineering Student | Aspiring Backend Developer &amp; AI Engineer">
-  <meta name="description" content="Portfolio of Mansi Gharat, Computer Engineering student focused on Backend Development and AI Engineering. Building backend applications, REST APIs, and AI-powered solutions.">
-  <meta name="keywords" content="Mansi Gharat, Backend Developer, AI Engineer, Python, FastAPI, Django, LangChain, Agentic AI, PostgreSQL, REST APIs, Portfolio">
+  <title>Mansi Gharat - Backend &amp; Agentic AI Engineer</title>
+  <meta name="description" content="Portfolio of Mansi Gharat — Computer Engineering Student, Backend Developer (Python, FastAPI, Django), and building toward Agentic AI Engineering.">
   <meta name="author" content="Mansi Gharat">
-  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
-  <!-- Open Graph / Facebook / LinkedIn -->
+  <!-- Open Graph / Meta -->
   <meta property="og:type" content="website">
+  <meta property="og:title" content="Mansi Gharat — Backend &amp; Agentic AI Engineer">
+  <meta property="og:description" content="Building backend applications, REST APIs, and multi-agent AI systems with Python, FastAPI, and LangChain.">
   <meta property="og:url" content="https://mansigharat.github.io/">
-  <meta property="og:title" content="Mansi Gharat | Computer Engineering Student | Aspiring Backend Developer &amp; AI Engineer">
-  <meta property="og:description" content="Computer Engineering Student focused on Backend Development and AI Engineering. Building backend applications, REST APIs, and AI-powered solutions.">
-  <meta property="og:image" content="https://mansigharat.github.io/Profile_Pic.jpeg">
 
-  <!-- Twitter Card -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://mansigharat.github.io/">
-  <meta property="twitter:title" content="Mansi Gharat | Computer Engineering Student | Aspiring Backend Developer &amp; AI Engineer">
-  <meta property="twitter:description" content="Computer Engineering Student focused on Backend Development and AI Engineering. Building backend applications, REST APIs, and AI-powered solutions.">
-  <meta property="twitter:image" content="https://mansigharat.github.io/Profile_Pic.jpeg">
-
-  <!-- Google Fonts: Inter (Sans-serif) & JetBrains Mono (Monospace for code/tags) -->
+  <!-- Google Fonts: Outfit (800, 900) & JetBrains Mono (400, 600, 700) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@800;900&display=swap" rel="stylesheet">
 
-  <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="style.css">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./src/styles/variables.css">
+  <link rel="stylesheet" href="./src/styles/base.css">
+  <link rel="stylesheet" href="./src/styles/components.css">
+  <link rel="stylesheet" href="./src/styles/sections.css">
 </head>
-<body>
-  <!-- Accessible Skip to Main Content Link -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+<body class="theme-light">
 
-  <!-- Custom Ambient Cursor (Enabled only on devices with fine pointer) -->
-  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <!-- Custom Cursor (Desktop Only) -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
 
-  <!-- Background Ambient Glow Accents -->
-  <div class="ambient-gradient ambient-gradient-top" aria-hidden="true"></div>
-  <div class="ambient-gradient ambient-gradient-bottom" aria-hidden="true"></div>
+  <!-- Film Grain Overlay (5.5% Opacity SVG Noise) -->
+  <svg class="film-grain" aria-hidden="true">
+    <filter id="grainFilter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch" />
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.45 0" />
+    </filter>
+    <rect width="100%" height="100%" filter="url(#grainFilter)" />
+  </svg>
 
-  <!-- Header / Navigation Bar -->
-  <header class="site-header" id="siteHeader">
-    <div class="container nav-container">
-      <a href="#hero" class="brand-logo" aria-label="Mansi Gharat Home">
-        <span class="brand-monogram">MG</span>
-        <span class="brand-name">Mansi Gharat</span>
+  <!-- 0. INTRO LOADER (<1.5s) -->
+  <aside class="loader-overlay" aria-label="Loading Screen">
+    <div class="loader-header">
+      <div class="loader-brand">
+        <span class="loader-status-dot"></span>
+        <span>Portfolio // 2026</span>
+      </div>
+      <div class="mono-label">System Initializing</div>
+    </div>
+    <div class="loader-center">
+      <div class="loader-name">MANSI GHARAT</div>
+    </div>
+    <div class="loader-footer">
+      <div class="loader-role">Backend → Agentic AI</div>
+      <div class="loader-counter">00%</div>
+    </div>
+  </aside>
+
+  <!-- FLOATING PILL NAVBAR -->
+  <header class="header-nav-wrap" id="header-nav">
+    <div class="header-nav-container">
+      <!-- Left Wordmark -->
+      <a href="#hero" class="nav-wordmark" aria-label="Mansi Gharat Home">
+        <span class="brand-dot"></span>
+        <span>MANSI GHARAT</span>
       </a>
 
-      <!-- Desktop Navigation Links -->
-      <nav class="desktop-nav" aria-label="Main Navigation">
-        <ul class="nav-list">
-          <li><a href="#hero" class="nav-link active">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#achievements" class="nav-link">Achievements</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
+      <!-- Center Pill Navigation -->
+      <nav class="floating-navbar" aria-label="Main Navigation">
+        <ul class="nav-pill-list">
+          <li><a href="#hero" class="nav-pill-link active">HOME</a></li>
+          <li><a href="#about" class="nav-pill-link">ABOUT ME</a></li>
+          <li><a href="#journey" class="nav-pill-link">JOURNEY</a></li>
+          <li><a href="#projects" class="nav-pill-link">PROJECTS</a></li>
+          <li><a href="#skills" class="nav-pill-link">SKILLS</a></li>
+          <li><a href="#contact" class="nav-pill-link">CONTACT</a></li>
         </ul>
       </nav>
 
-      <!-- Header Action & Mobile Menu Toggle -->
-      <div class="nav-actions">
-        <a href="#contact" class="btn btn-outline btn-sm nav-cta">Get in Touch</a>
-        
-        <button 
-          type="button" 
-          class="mobile-toggle" 
-          id="mobileMenuToggle" 
-          aria-label="Toggle navigation menu" 
-          aria-expanded="false" 
-          aria-controls="mobileNav"
-        >
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
+      <!-- Right Socials & Mobile Toggle -->
+      <div class="nav-socials">
+        <a href="https://github.com/mansigharat" target="_blank" rel="noopener noreferrer" class="nav-icon-btn" aria-label="GitHub Profile">
+          <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/mansigharat/" target="_blank" rel="noopener noreferrer" class="nav-icon-btn" aria-label="LinkedIn Profile">
+          <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+        <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
       </div>
     </div>
 
-    <!-- Mobile Drawer Navigation -->
-    <div class="mobile-nav" id="mobileNav" aria-hidden="true">
-      <div class="mobile-nav-inner">
-        <ul class="mobile-nav-list">
-          <li><a href="#hero" class="mobile-nav-link">Home</a></li>
-          <li><a href="#about" class="mobile-nav-link">About</a></li>
-          <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
-          <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
-          <li><a href="#achievements" class="mobile-nav-link">Achievements</a></li>
-          <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
-        </ul>
-        <div class="mobile-nav-footer">
-          <p class="mobile-nav-email">mansigharat1909@gmail.com</p>
-          <div class="mobile-social-links">
-            <a href="https://github.com/mansigharat/" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
-              <svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
-                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-              </svg>
-            </a>
-            <a href="https://www.linkedin.com/in/mansigharat/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
-              <svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
-                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-              </svg>
-            </a>
-            <a href="mailto:mansigharat1909@gmail.com" aria-label="Send Email">
-              <svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
-                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- Mobile Drawer Menu (Contained inside header with display:none by default) -->
+    <nav class="mobile-drawer" aria-label="Mobile Navigation Drawer">
+      <a href="#hero">HOME</a>
+      <a href="#about">ABOUT ME</a>
+      <a href="#journey">JOURNEY</a>
+      <a href="#projects">PROJECTS</a>
+      <a href="#skills">SKILLS</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
   </header>
 
-  <!-- Main Landmark -->
+  <!-- MAIN LANDMARK -->
   <main id="main-content">
 
-    <!-- 1. HERO SECTION -->
-    <section class="hero-section" id="hero" aria-label="Hero Section">
+    <!-- 1. HERO SECTION (Theme: Light / --paper) -->
+    <section class="hero-section theme-light" id="hero" aria-label="Introduction">
       <div class="container hero-container">
-        <div class="hero-content">
-          <!-- Engineer Name Heading: Single color, crisp white -->
-          <h1 class="hero-title reveal" data-reveal>Mansi Gharat</h1>
+        <div class="hero-badge">
+          <span class="status-dot"></span>
+          <span>Computer Engineering Student • Open to internships</span>
+        </div>
 
-          <!-- Role / Headline -->
-          <p class="hero-role reveal" data-reveal>
-            Computer Engineering Student | Aspiring Backend Developer &amp; AI Engineer
-          </p>
+        <h1 class="hero-giant-text">
+          BACKEND FIRST.<br>
+          AGENTIC AI <span class="accent-word">NEXT.</span>
+        </h1>
 
-          <!-- Introduction -->
-          <p class="hero-tagline reveal" data-reveal>
-            Building backend applications, REST APIs, and AI-powered solutions using Python and modern technologies.
-          </p>
+        <p class="hero-supporting-text">
+          Computer Engineering Student &amp; Backend Developer specializing in Python, FastAPI, and Django — purposefully building toward autonomous multi-agent systems and Agentic AI engineering.
+        </p>
 
-          <!-- Availability Status -->
-          <div class="hero-availability reveal" data-reveal>
-            <span class="availability-dot" aria-hidden="true"></span>
-            <span>Open to Backend Development and AI Engineering Internships.</span>
+        <div class="hero-cta-group">
+          <a href="#projects" class="btn-pill btn-pill-primary">
+            <span>VIEW SELECTED PROJECTS</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+          <a href="#contact" class="btn-pill btn-pill-outline">
+            <span>GET IN TOUCH</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+
+        <div class="hero-bottom-bar">
+          <div class="hero-mono-status">
+            <span>Mansi Gharat • Based in India</span>
           </div>
+          <div class="hero-scroll-indicator">
+            <span>SCROLL DOWN</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <!-- Call to Action Buttons -->
-          <div class="hero-actions reveal" data-reveal>
-            <a href="#projects" class="btn btn-primary">
-              <span>View Projects</span>
-              <svg class="btn-icon" viewBox="0 0 20 20" width="16" height="16" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
-              </svg>
-            </a>
-            <a href="#contact" class="btn btn-secondary">
-              <span>Contact Me</span>
-            </a>
-            <a href="https://github.com/mansigharat/" target="_blank" rel="noopener noreferrer" class="btn btn-outline" aria-label="GitHub Profile">
-              <svg class="btn-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
-                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-              </svg>
-              <span>GitHub</span>
-            </a>
-            <a href="https://www.linkedin.com/in/mansigharat/" target="_blank" rel="noopener noreferrer" class="btn btn-outline" aria-label="LinkedIn Profile">
-              <svg class="btn-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
-                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-              </svg>
-              <span>LinkedIn</span>
-            </a>
+    <!-- 2. ABOUT SECTION (Theme: Dark / --ink) -->
+    <section class="about-section theme-dark" id="about" aria-label="About Mansi Gharat">
+      <!-- Particle Flowfield Canvas -->
+      <div class="about-canvas-wrap" aria-hidden="true">
+        <canvas id="about-flowfield-canvas"></canvas>
+      </div>
+
+      <div class="container about-content">
+        <div class="about-header">
+          <span class="mono-label accent-text">02 // PROFILE &amp; TRAJECTORY</span>
+          <h2 class="font-display about-title-text">ABOUT ME</h2>
+        </div>
+
+        <!-- 3 Information Cards Row -->
+        <div class="about-cards-row">
+          <div class="about-meta-box">
+            <div class="mono-label about-meta-label">Current Role</div>
+            <p class="about-meta-val">Third-Year Computer Engineering Student<br>Pillai HOC College of Engineering &amp; Technology</p>
+          </div>
+          <div class="about-meta-box">
+            <div class="mono-label about-meta-label">Location &amp; Availability</div>
+            <p class="about-meta-val">Based in India • Open to Backend Development and AI Engineering Internships</p>
+          </div>
+          <div class="about-meta-box">
+            <div class="mono-label about-meta-label">Core Trajectory</div>
+            <p class="about-meta-val" style="color: var(--accent); font-weight: 600;">Foundation → Backend → Agentic AI</p>
           </div>
         </div>
 
-        <!-- Right Side: Clean Engineering Terminal Card -->
-        <div class="hero-visual reveal" data-reveal>
-          <div class="hero-terminal">
-            <div class="terminal-header">
-              <div class="terminal-dots" aria-hidden="true">
-                <span class="dot dot-red"></span>
-                <span class="dot dot-amber"></span>
-                <span class="dot dot-green"></span>
-              </div>
-              <div class="terminal-title">mansi_agent_runtime.py</div>
-              <div class="terminal-status">
-                <span class="status-chip">FASTAPI &bull; 200 OK</span>
-              </div>
-            </div>
+        <!-- Narrative Paragraphs with Enhanced Readability -->
+        <div class="about-narrative-wrap">
+          <p class="about-bio-p">
+            I am a third-year Computer Engineering student at Pillai HOC College of Engineering and Technology, building robust server-side architecture and intelligent software systems. <strong>Backend engineering is my strong foundation</strong> — where I architect clean RESTful APIs, design relational data schemas, and write resilient asynchronous Python services with FastAPI and Django.
+          </p>
+          <p class="about-bio-p">
+            My long-term aspiration is to become an <strong>Agentic AI Engineer</strong>. Rather than making overstated claims, I approach this as a deliberate growth path: mastering distributed systems, deterministic logic, and API protocols first, then extending those foundations into autonomous agents, retrieval-augmented generation (RAG), and tool orchestration with LLMs.
+          </p>
+          <p class="about-bio-p">
+            From leading the RuralCare project in the Smart India Hackathon to achieving <strong>4th rank in the Lyzr AI Weekly Challenge</strong> with Competitor Radar, I love solving real-world challenges with hands-on code. I am actively seeking backend development and AI engineering internships, open-source collaboration, and high-impact engineering opportunities.
+          </p>
+        </div>
+      </div>
+    </section>
 
-            <div class="terminal-body">
-              <div class="code-lines" aria-label="Sample backend AI code snippet">
-                <div class="code-line"><span class="code-kw">from</span> <span class="code-var">fastapi</span> <span class="code-kw">import</span> <span class="code-cls">FastAPI</span></div>
-                <div class="code-line"><span class="code-kw">from</span> <span class="code-var">langchain.agents</span> <span class="code-kw">import</span> <span class="code-cls">AgentExecutor</span></div>
-                <div class="code-line"><span class="code-kw">from</span> <span class="code-var">pydantic</span> <span class="code-kw">import</span> <span class="code-cls">BaseModel</span></div>
-                <div class="code-line empty">&nbsp;</div>
-                <div class="code-line"><span class="code-var">app</span> = <span class="code-cls">FastAPI</span>(<span class="code-param">title</span>=<span class="code-str">"MansiAI.Engine"</span>)</div>
-                <div class="code-line empty">&nbsp;</div>
-                <div class="code-line"><span class="code-decorator">@app.post</span>(<span class="code-str">"/v1/diagnose"</span>)</div>
-                <div class="code-line"><span class="code-kw">async def</span> <span class="code-fn">execute_agent</span>(<span class="code-param">payload</span>: <span class="code-cls">SymptomSchema</span>):</div>
-                <div class="code-line indent-1"><span class="code-comment"># Query SQL DB &amp; synthesize via LLM Agent</span></div>
-                <div class="code-line indent-1"><span class="code-var">context</span> = <span class="code-kw">await</span> <span class="code-var">db</span>.<span class="code-fn">fetch_records</span>(payload.<span class="code-var">patient_id</span>)</div>
-                <div class="code-line indent-1"><span class="code-var">agent</span> = <span class="code-cls">AgentExecutor</span>(<span class="code-param">llm</span>=<span class="code-cls">GroqLLM</span>(), <span class="code-param">tools</span>=<span class="code-var">tools</span>)</div>
-                <div class="code-line indent-1"><span class="code-kw">return await</span> <span class="code-var">agent</span>.<span class="code-fn">ainvoke</span>({<span class="code-str">"ctx"</span>: <span class="code-var">context</span>})</div>
-              </div>
-
-              <!-- Telemetry Metrics Bar inside terminal -->
-              <div class="terminal-telemetry">
-                <div class="telemetry-stat">
-                  <span class="stat-label">LATENCY</span>
-                  <span class="stat-val">24ms</span>
-                </div>
-                <div class="telemetry-stat">
-                  <span class="stat-label">LLM ENGINE</span>
-                  <span class="stat-val">Groq / Gemini</span>
-                </div>
-                <div class="telemetry-stat">
-                  <span class="stat-label">STACK</span>
-                  <span class="stat-val">FastAPI &bull; SQL</span>
-                </div>
-              </div>
-            </div>
+    <!-- 3. JOURNEY SECTION (Theme: Dark / --ink) -->
+    <section class="journey-section theme-dark" id="journey" aria-label="Journey Chapters">
+      <div class="container journey-header">
+        <div class="journey-title-wrap">
+          <span class="mono-label accent-text">Evolution Timeline</span>
+          <h2 class="font-display" style="font-size: var(--section-title-size); line-height: 0.95;">WHERE I'VE BEEN</h2>
+        </div>
+        <div class="journey-progress-wrap">
+          <div class="journey-counter">CHAPTER // 01 / 05</div>
+          <div class="journey-progress-track">
+            <div class="journey-progress-bar"></div>
           </div>
         </div>
       </div>
 
-      <!-- Subtle Hero Scroll Prompt -->
-      <a href="#about" class="hero-scroll-indicator" aria-label="Scroll to About section">
-        <span class="scroll-mouse" aria-hidden="true">
-          <span class="scroll-wheel"></span>
-        </span>
-        <span class="scroll-text">Scroll to explore</span>
-      </a>
+      <!-- Horizontal Pinned Scroll Track -->
+      <div class="container">
+        <div class="journey-scroll-container">
+
+          <!-- Chapter 01 -->
+          <article class="journey-card">
+            <div class="journey-bg-num" aria-hidden="true">01</div>
+            <div class="journey-card-top">
+              <span class="journey-chapter-box">01 // CHAPTER</span>
+              <div class="journey-date-place">2022 – PRESENT • PILLAI HOC CET</div>
+              <h3 class="journey-card-title">Computer Engineering Foundation</h3>
+            </div>
+            <p class="journey-card-desc">
+              Building a grounded understanding of computer science principles, data structures, algorithms, operating systems, and computer networks. Developing a disciplined engineering mindset geared toward problem-solving and scalable systems.
+            </p>
+            <div class="journey-card-actions">
+              <span class="tag-pill">CS Fundamentals</span>
+              <span class="tag-pill">Algorithms</span>
+            </div>
+          </article>
+
+          <!-- Chapter 02 -->
+          <article class="journey-card">
+            <div class="journey-bg-num" aria-hidden="true">02</div>
+            <div class="journey-card-top">
+              <span class="journey-chapter-box">02 // CHAPTER</span>
+              <div class="journey-date-place">2023 – PRESENT • CORE SPECIALIZATION</div>
+              <h3 class="journey-card-title">Backend Architecture</h3>
+            </div>
+            <p class="journey-card-desc">
+              Establishing my primary technical strength in server-side engineering. Developing high-concurrency APIs with FastAPI, structured enterprise apps with Django and Django REST Framework, and managing data integrity with PostgreSQL and SQLite.
+            </p>
+            <div class="journey-card-actions">
+              <span class="tag-pill">Python</span>
+              <span class="tag-pill">FastAPI</span>
+              <span class="tag-pill">Django</span>
+              <span class="tag-pill">PostgreSQL</span>
+            </div>
+          </article>
+
+          <!-- Chapter 03 -->
+          <article class="journey-card">
+            <div class="journey-bg-num" aria-hidden="true">03</div>
+            <div class="journey-card-top">
+              <span class="journey-chapter-box">03 // CHAPTER</span>
+              <div class="journey-date-place">HACKATHON • SMART INDIA HACKATHON</div>
+              <h3 class="journey-card-title">RuralCare Platform</h3>
+            </div>
+            <p class="journey-card-desc">
+              Selected to lead our team for RuralCare, addressing healthcare accessibility for remote communities in India. My personal focus was architecting the frontend in React.js and integrating clean REST API endpoints for seamless doctor-patient workflows.
+            </p>
+            <div class="journey-card-actions">
+              <span class="tag-pill">Team Lead</span>
+              <span class="tag-pill">React.js</span>
+              <span class="tag-pill">REST Integration</span>
+            </div>
+          </article>
+
+          <!-- Chapter 04 -->
+          <article class="journey-card">
+            <div class="journey-bg-num" aria-hidden="true">04</div>
+            <div class="journey-card-top">
+              <span class="journey-chapter-box">04 // CHAPTER</span>
+              <div class="journey-date-place">CHALLENGE • LYZR AI WEEKLY #1</div>
+              <h3 class="journey-card-title">4th Rank // Competitor Radar</h3>
+            </div>
+            <p class="journey-card-desc">
+              Competed in Lyzr AI Weekly Challenge #1 (Agents for GTM) and secured 4th rank with Competitor Radar. Engineered a multi-agent system coordinating research, positioning analysis, and automated competitive battlecards for fintech businesses.
+            </p>
+            <div class="journey-card-actions">
+              <span class="tag-pill">4th Rank</span>
+              <span class="tag-pill">Multi-Agent</span>
+              <span class="tag-pill">Lyzr Studio</span>
+            </div>
+          </article>
+
+          <!-- Chapter 05 -->
+          <article class="journey-card">
+            <div class="journey-bg-num" aria-hidden="true">05</div>
+            <div class="journey-card-top">
+              <span class="journey-chapter-box" style="border-color: var(--white); color: var(--white);">05 // CURRENTLY EXPLORING</span>
+              <div class="journey-date-place">PRESENT • NEXT HORIZON</div>
+              <h3 class="journey-card-title">Agentic AI Engineering</h3>
+            </div>
+            <p class="journey-card-desc">
+              Actively bridging server-side rigor with agentic systems: learning LangChain, Retrieval-Augmented Generation (RAG), LLM APIs, and tool calling. Building software where deterministic backend guarantees power autonomous intelligence.
+            </p>
+            <div class="journey-card-actions">
+              <span class="tag-pill">LangChain</span>
+              <span class="tag-pill">RAG</span>
+              <span class="tag-pill">Tool Calling</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
     </section>
 
-    <!-- 2. ABOUT SECTION -->
-    <section class="about-section section-padding" id="about" aria-label="About Section">
+    <!-- 4. SELECTED PROJECTS (Theme: Light / --paper) -->
+    <section class="projects-section theme-light" id="projects" aria-label="Selected Projects">
       <div class="container">
-        <div class="section-header text-center reveal" data-reveal>
-          <!-- <span class="section-eyebrow">Biography</span> -->
-          <h2 class="section-title">About Me</h2>
+        <div class="projects-header">
+          <div>
+            <span class="mono-label accent-text">Portfolio Showcase</span>
+            <h2 class="font-display" style="font-size: var(--section-title-size); line-height: 0.95;">SELECTED PROJECTS</h2>
+          </div>
+          <div class="projects-queue-indicator">QUEUE [01 / 04] — REVEALED</div>
         </div>
 
-        <div class="about-grid">
-          <!-- Photo Column with Clean Technical Border Frame -->
-          <div class="about-visual reveal" data-reveal>
-            <div class="profile-frame">
-              <!-- Profile Picture in Clean Frame -->
-              <img src="Profile_Pic.jpeg" alt="Mansi Gharat - Aspiring Backend AI Engineer" class="photo-image">
-            </div>
-
-            <!-- Frame Sub-badge -->
-            <div class="frame-status">
-              <span class="status-indicator"></span>
-              <span>Based in India &bull; Open to Remote Opportunities</span>
-            </div>
+        <!-- 3D Perspective Card Queue + Detail Panel -->
+        <div class="projects-queue-wrapper">
+          <!-- Left: 3D Card Queue View -->
+          <div class="projects-3d-stage">
+            <!-- Injected dynamically by projects3d.js -->
           </div>
 
-          <!-- Text Column -->
-            <h3 class="about-headline">
-              Building reliable backend applications and intelligent AI solutions.
-            </h3>
-            
-            <p class="about-body">
-              I'm a third-year Computer Engineering student at Pillai HOC College of Engineering and Technology, focused on backend development and AI engineering.
-            </p>
-            
-            <p class="about-body">
-              I enjoy building practical software applications and exploring how things work behind the scenes, from designing REST APIs and managing databases to developing AI-powered applications.
+          <!-- Right: Interactive Detail Panel -->
+          <div class="project-details-panel">
+            <div class="project-queue-nav">
+              <!-- Numbered Pills (01, 02, 03, 04) -->
+            </div>
+
+            <h3 class="project-detail-title">Competitor Radar</h3>
+
+            <div class="project-detail-tech">
+              <span class="tag-pill">Lyzr Agent Studio</span>
+              <span class="tag-pill">Multi-Agent Architecture</span>
+              <span class="tag-pill">LLM APIs</span>
+            </div>
+
+            <p class="project-detail-desc">
+              An automated intelligence system engineered for fintech businesses that orchestrates three specialized agents to uncover market competitors, analyze positioning, and generate live sales battlecards.
             </p>
 
-            <p class="about-body">
-              My current technical focus includes Python, Django, FastAPI, PostgreSQL, REST APIs, and modern AI technologies such as LLMs, RAG, LangChain, and Agentic AI. I believe in learning by building and strengthening my fundamentals through hands-on projects.
-            </p>
+            <div class="project-backend-role-box">
+              <strong>Backend &amp; System Integration:</strong>
+              <span>Multi-agent task orchestration, prompt chaining pipelines, and schema-enforced market research synthesis.</span>
+            </div>
 
-            <p class="about-body">
-              I've worked on projects across backend development, full-stack applications, and AI. I also led a team for RuralCare, our Smart India Hackathon (SIH) project, where my primary technical contribution was frontend development. Additionally, I secured 4th rank in the Lyzr AI Weekly Challenge #1 (Agents for GTM) with Competitor Radar, an AI-powered competitive intelligence system.
-            </p>
-
-            <p class="about-body">
-              I'm continuously learning, improving my problem-solving skills, and exploring better ways to build reliable and useful software.
-            </p>
-
-            <p class="about-body">
-              Currently open to backend development and AI engineering internships, open-source collaborations, and opportunities to work on meaningful real-world projects.
-            </p>
-
-            <!-- Profile Action Links -->
-            <div class="about-actions">
-              <a href="https://github.com/mansigharat/" target="_blank" rel="noopener noreferrer" class="text-link">
-                <span>View GitHub Repositories</span>
-                <svg viewBox="0 0 20 20" width="14" height="14" fill="currentColor" aria-hidden="true">
-                  <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/>
-                  <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/>
-                </svg>
+            <div class="project-detail-links">
+              <a href="https://github.com/mansigharat/" target="_blank" rel="noopener noreferrer" class="project-link-underlined project-repo-link">
+                SOURCE CODE ↗
               </a>
-              <a href="https://www.linkedin.com/in/mansigharat/" target="_blank" rel="noopener noreferrer" class="text-link">
-                <span>Connect on LinkedIn</span>
-                <svg viewBox="0 0 20 20" width="14" height="14" fill="currentColor" aria-hidden="true">
-                  <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/>
-                  <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/>
-                </svg>
-              </a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 3. SKILLS SECTION -->
-    <section class="skills-section section-padding" id="skills" aria-label="Skills Section">
+    <!-- 5. SKILLS SECTION (Theme: Dark / --ink) -->
+    <section class="skills-section theme-dark" id="skills" aria-label="Technical Capabilities">
       <div class="container">
-        <div class="section-header text-center reveal" data-reveal>
-          <span class="section-eyebrow">Technical Expertise</span>
-          <h2 class="section-title">Core Competencies</h2>
-          <p class="section-desc">
-            Focused capabilities grouped across engineering domains, built with production-first best practices.
-          </p>
-        </div>
+        <span class="mono-label accent-text">Core Competencies</span>
+        <h2 class="font-display" style="font-size: var(--section-title-size); line-height: 0.95;">CAPABILITIES</h2>
 
-        <div class="skills-grid">
-          <!-- Card 1: Backend Development -->
-          <article class="skill-card reveal" data-reveal>
-            <div class="skill-card-inner">
-              <div class="skill-card-header">
-                <div class="skill-icon-wrapper" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7">
-                    <polyline points="16 18 22 12 16 6"></polyline>
-                    <polyline points="8 6 2 12 8 18"></polyline>
-                  </svg>
-                </div>
-                <div class="skill-header-meta">
-                  <span class="skill-index">01</span>
-                  <h3 class="skill-card-title">Backend Development</h3>
-                </div>
-              </div>
-              <p class="skill-card-desc">
-                Building robust server-side architectures, RESTful APIs, and structured application logic with modern Python frameworks.
-              </p>
-              <div class="skill-tags">
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">Django</span>
-                <span class="skill-tag">Django REST Framework</span>
-                <span class="skill-tag">FastAPI</span>
-                <span class="skill-tag">REST APIs</span>
-                <span class="skill-tag">SQL</span>
-              </div>
+        <div class="skills-rows-list">
+          <!-- Row 1: Backend Development (First & Largest) -->
+          <div class="skill-editorial-row">
+            <div class="skill-row-left">
+              <span class="skill-row-num">01 // FOUNDATION &amp; CORE FOCUS</span>
+              <h3 class="skill-row-title">BACKEND DEVELOPMENT</h3>
             </div>
-          </article>
+            <div class="skill-row-tags">
+              <span class="skill-tag-item">Python</span>
+              <span class="skill-tag-item">FastAPI</span>
+              <span class="skill-tag-item">Django</span>
+              <span class="skill-tag-item">Django REST Framework</span>
+              <span class="skill-tag-item">REST APIs</span>
+              <span class="skill-tag-item">Pydantic</span>
+            </div>
+          </div>
 
-          <!-- Card 2: Databases -->
-          <article class="skill-card reveal" data-reveal>
-            <div class="skill-card-inner">
-              <div class="skill-card-header">
-                <div class="skill-icon-wrapper" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7">
-                    <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
-                  </svg>
-                </div>
-                <div class="skill-header-meta">
-                  <span class="skill-index">02</span>
-                  <h3 class="skill-card-title">Databases</h3>
-                </div>
-              </div>
-              <p class="skill-card-desc">
-                Managing relational database schemas, data modeling, query optimization, and transaction consistency.
-              </p>
-              <div class="skill-tags">
-                <span class="skill-tag">PostgreSQL</span>
-                <span class="skill-tag">SQLite</span>
-              </div>
+          <!-- Row 2: Databases & Storage -->
+          <div class="skill-editorial-row">
+            <div class="skill-row-left">
+              <span class="skill-row-num">02 // DATA LAYER</span>
+              <h3 class="skill-row-title">DATABASES &amp; STORAGE</h3>
             </div>
-          </article>
+            <div class="skill-row-tags">
+              <span class="skill-tag-item">PostgreSQL</span>
+              <span class="skill-tag-item">SQLite</span>
+              <span class="skill-tag-item">Relational Modeling</span>
+              <span class="skill-tag-item">ORM Optimization</span>
+            </div>
+          </div>
 
-          <!-- Card 3: AI Engineering -->
-          <article class="skill-card reveal" data-reveal>
-            <div class="skill-card-inner">
-              <div class="skill-card-header">
-                <div class="skill-icon-wrapper" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7">
-                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                  </svg>
-                </div>
-                <div class="skill-header-meta">
-                  <span class="skill-index">03</span>
-                  <h3 class="skill-card-title">AI Engineering</h3>
-                </div>
-              </div>
-              <p class="skill-card-desc">
-                Developing intelligent applications, multi-agent systems, prompt workflows, and structured LLM integrations.
-              </p>
-              <div class="skill-tags">
-                <span class="skill-tag">LLM APIs</span>
-                <span class="skill-tag">Prompt Engineering</span>
-                <span class="skill-tag">RAG</span>
-                <span class="skill-tag">LangChain</span>
-                <span class="skill-tag">Agentic AI</span>
-                <span class="skill-tag">Pydantic</span>
-              </div>
+          <!-- Row 3: AI & Agentic Engineering -->
+          <div class="skill-editorial-row">
+            <div class="skill-row-left">
+              <span class="skill-row-num">03 // STRATEGIC HORIZON</span>
+              <h3 class="skill-row-title">AI &amp; AGENTIC ENGINEERING</h3>
             </div>
-          </article>
+            <div class="skill-row-tags">
+              <span class="skill-tag-item">LLM APIs</span>
+              <span class="skill-tag-item">Prompt Engineering</span>
+              <span class="skill-tag-item">RAG (Retrieval-Augmented Generation)</span>
+              <span class="skill-tag-item">LangChain</span>
+              <span class="skill-tag-item">Agentic AI</span>
+            </div>
+          </div>
 
-          <!-- Card 4: Frontend Development -->
-          <article class="skill-card reveal" data-reveal>
-            <div class="skill-card-inner">
-              <div class="skill-card-header">
-                <div class="skill-icon-wrapper" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7">
-                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                    <line x1="3" y1="9" x2="21" y2="9"></line>
-                    <line x1="9" y1="21" x2="9" y2="9"></line>
-                  </svg>
-                </div>
-                <div class="skill-header-meta">
-                  <span class="skill-index">04</span>
-                  <h3 class="skill-card-title">Frontend Development</h3>
-                </div>
-              </div>
-              <p class="skill-card-desc">
-                Creating responsive, accessible, and user-friendly web interfaces and integrating components with backend services.
-              </p>
-              <div class="skill-tags">
-                <span class="skill-tag">HTML</span>
-                <span class="skill-tag">CSS</span>
-                <span class="skill-tag">JavaScript</span>
-                <span class="skill-tag">React.js</span>
-              </div>
+          <!-- Row 4: Frontend Development -->
+          <div class="skill-editorial-row">
+            <div class="skill-row-left">
+              <span class="skill-row-num">04 // USER EXPERIENCE</span>
+              <h3 class="skill-row-title">FRONTEND FOUNDATION</h3>
             </div>
-          </article>
+            <div class="skill-row-tags">
+              <span class="skill-tag-item">HTML5</span>
+              <span class="skill-tag-item">CSS3</span>
+              <span class="skill-tag-item">JavaScript</span>
+              <span class="skill-tag-item">React.js</span>
+            </div>
+          </div>
 
-          <!-- Card 5: Tools -->
-          <article class="skill-card reveal" data-reveal>
-            <div class="skill-card-inner">
-              <div class="skill-card-header">
-                <div class="skill-icon-wrapper" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7">
-                    <line x1="6" y1="3" x2="6" y2="15"></line>
-                    <circle cx="18" cy="6" r="3"></circle>
-                    <circle cx="6" cy="18" r="3"></circle>
-                    <path d="M18 9a9 9 0 0 1-9 9"></path>
-                  </svg>
-                </div>
-                <div class="skill-header-meta">
-                  <span class="skill-index">05</span>
-                  <h3 class="skill-card-title">Tools</h3>
-                </div>
-              </div>
-              <p class="skill-card-desc">
-                Version control, team collaboration, environment consistency, and containerizing software services.
-              </p>
-              <div class="skill-tags">
-                <span class="skill-tag">Git</span>
-                <span class="skill-tag">GitHub</span>
-                <span class="skill-tag">Docker</span>
-              </div>
+          <!-- Row 5: Tools & Workflows -->
+          <div class="skill-editorial-row">
+            <div class="skill-row-left">
+              <span class="skill-row-num">05 // WORKFLOW &amp; DEPLOYMENT</span>
+              <h3 class="skill-row-title">DEV TOOLS</h3>
             </div>
-          </article>
+            <div class="skill-row-tags">
+              <span class="skill-tag-item">Git</span>
+              <span class="skill-tag-item">GitHub</span>
+              <span class="skill-tag-item">Docker</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 4. PROJECTS SECTION -->
-    <section class="projects-section section-padding" id="projects" aria-label="Projects Section">
+    <!-- 6. CONTACT SECTION (Theme: Light / --paper) -->
+    <section class="contact-section theme-light" id="contact" aria-label="Contact Information">
       <div class="container">
-        <div class="section-header text-center reveal" data-reveal>
-          <span class="section-eyebrow">Featured Portfolio</span>
-          <h2 class="section-title">Selected Works</h2>
-          <p class="section-desc">
-            A curated showcase of backend systems, intelligent AI applications, and full-stack solutions.
+        <div class="contact-hero-wrap">
+          <span class="mono-label accent-text">Initiate Conversation</span>
+          <h2 class="contact-giant-heading">LET'S TALK</h2>
+          <p class="contact-invitation-text">
+            Open to backend development and AI engineering internships, open-source collaboration, and meaningful real-world projects. Based in India.
           </p>
+
+          <div class="contact-actions-wrap">
+            <a href="https://github.com/mansigharat" target="_blank" rel="noopener noreferrer" class="btn-pill btn-pill-primary">
+              GITHUB ↗
+            </a>
+            <a href="https://www.linkedin.com/in/mansigharat/" target="_blank" rel="noopener noreferrer" class="btn-pill btn-pill-primary">
+              LINKEDIN ↗
+            </a>
+            <a href="mailto:mansigharat1909@gmail.com" class="btn-pill btn-pill-accent">
+              mansigharat1909@gmail.com ✉
+            </a>
+          </div>
         </div>
 
-        <!-- Filter Chips -->
-        <div class="project-filters reveal" data-reveal role="tablist" aria-label="Filter Projects">
-          <button type="button" class="filter-chip active" data-filter="all" role="tab" aria-selected="true">
-            <span>All Projects</span>
-            <span class="filter-count">4</span>
+        <div class="footer-bar">
+          <div class="footer-copy">
+            © 2026 MANSI GHARAT • BUILT WITH VITE &amp; EDITORIAL RIGOR
+          </div>
+          <button class="btn-back-to-top" aria-label="Back to top of page">
+            <span>BACK TO TOP</span>
+            <span aria-hidden="true">↑</span>
           </button>
-          <button type="button" class="filter-chip" data-filter="ai" role="tab" aria-selected="false">
-            <span>AI Systems</span>
-            <span class="filter-count">3</span>
-          </button>
-          <button type="button" class="filter-chip" data-filter="full-stack" role="tab" aria-selected="false">
-            <span>Full-Stack</span>
-            <span class="filter-count">1</span>
-          </button>
-        </div>
-
-        <!-- Projects Grid: Exactly 4 Specified Items -->
-        <div class="projects-grid" id="projectsGrid">
-
-          <!-- PROJECT 1: Patient Health Assistant Agent -->
-          <article class="project-card reveal" data-reveal data-category="ai">
-            <div class="project-card-inner">
-              <!-- Visual Mockup Banner -->
-              <div class="project-image-wrap">
-                <div class="project-mockup mockup-ai">
-                  <div class="mockup-pattern" aria-hidden="true"></div>
-                  <div class="mockup-badge">AI Assistant &bull; Diagnostic Agent</div>
-                  <div class="mockup-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.4">
-                      <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-                    </svg>
-                  </div>
-                  <span class="mockup-code-line">FASTAPI // SQL_RECORDS // AGENT_DIAGNOSTICS</span>
-                </div>
-                <div class="project-category-tag">AI</div>
-              </div>
-
-              <!-- Card Content -->
-              <div class="project-content">
-                <h3 class="project-title">Patient Health Assistant Agent</h3>
-                <p class="project-description">
-                  An AI-powered Patient Health Assistant built on top of a FastAPI Patient Management System. The application allows users to manage patient records and analyze symptoms using an intelligent agent.
-                </p>
-
-                <!-- Tech Tags -->
-                <div class="project-tags" aria-label="Technologies used">
-                  <span class="tag">Python</span>
-                  <span class="tag">FastAPI</span>
-                  <span class="tag">LLM APIs</span>
-                  <span class="tag">Pydantic</span>
-                  <span class="tag">SQL</span>
-                </div>
-
-                <!-- Action Buttons -->
-                <div class="project-actions">
-                  <a href="https://github.com/mansigharat/patient-health-assistant-agent" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" aria-label="View Patient Health Assistant Agent source code on GitHub">
-                    <svg class="btn-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
-                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                    </svg>
-                    <span>GitHub</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- PROJECT 2: AI Resume Screener -->
-          <article class="project-card reveal" data-reveal data-category="ai">
-            <div class="project-card-inner">
-              <!-- Visual Mockup Banner -->
-              <div class="project-image-wrap">
-                <div class="project-mockup mockup-screener">
-                  <div class="mockup-pattern" aria-hidden="true"></div>
-                  <div class="mockup-badge">Groq API &bull; Evaluation Engine</div>
-                  <div class="mockup-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.4">
-                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                      <polyline points="14 2 14 8 20 8"></polyline>
-                      <line x1="16" y1="13" x2="8" y2="13"></line>
-                      <line x1="16" y1="17" x2="8" y2="17"></line>
-                      <polyline points="10 9 9 9 8 9"></polyline>
-                    </svg>
-                  </div>
-                  <span class="mockup-code-line">EVAL_SCORE: 0-100 // PYDANTIC_FEEDBACK</span>
-                </div>
-                <div class="project-category-tag">AI</div>
-              </div>
-
-              <!-- Card Content -->
-              <div class="project-content">
-                <h3 class="project-title">AI Resume Screener</h3>
-                <p class="project-description">
-                  An AI-powered resume scoring tool that allows users to submit a resume and receive a structured score from 0–100 along with feedback generated using an AI model.
-                </p>
-
-                <!-- Tech Tags -->
-                <div class="project-tags" aria-label="Technologies used">
-                  <span class="tag">Python</span>
-                  <span class="tag">FastAPI</span>
-                  <span class="tag">Groq API</span>
-                  <span class="tag">Pydantic</span>
-                  <span class="tag">HTML</span>
-                  <span class="tag">CSS</span>
-                  <span class="tag">JavaScript</span>
-                </div>
-
-                <!-- Action Buttons -->
-                <div class="project-actions">
-                  <a href="https://github.com/mansigharat/ai-resume-screener" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" aria-label="View AI Resume Screener source code on GitHub">
-                    <svg class="btn-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
-                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                    </svg>
-                    <span>GitHub</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- PROJECT 3: Competitor Radar -->
-          <article class="project-card reveal" data-reveal data-category="ai">
-            <div class="project-card-inner">
-              <!-- Visual Mockup Banner -->
-              <div class="project-image-wrap">
-                <div class="project-mockup mockup-radar">
-                  <div class="mockup-pattern" aria-hidden="true"></div>
-                  <div class="mockup-badge">Multi-Agent System &bull; Lyzr Agent Studio</div>
-                  <div class="mockup-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.4">
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <circle cx="12" cy="12" r="6"></circle>
-                      <circle cx="12" cy="12" r="2"></circle>
-                      <line x1="12" y1="2" x2="12" y2="6"></line>
-                      <line x1="12" y1="18" x2="12" y2="22"></line>
-                      <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line>
-                    </svg>
-                  </div>
-                  <span class="mockup-code-line">3_AGENTS_ORCHESTRATED // GTM_CHALLENGE</span>
-                </div>
-                <div class="project-category-tag">AI</div>
-              </div>
-
-              <!-- Card Content -->
-              <div class="project-content">
-                <!-- Visually Noticeable 4th Rank Badge -->
-                <div class="project-achievement-badge">
-                  <svg viewBox="0 0 20 20" width="14" height="14" fill="currentColor" aria-hidden="true">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                  </svg>
-                  <span>4th Rank – Lyzr AI Weekly Challenge #1 (Agents for GTM)</span>
-                </div>
-
-                <h3 class="project-title">Competitor Radar – AI Competitive Intelligence System</h3>
-                <p class="project-description">
-                  Built an AI-powered competitive intelligence system for fintech businesses as part of the Lyzr AI Weekly Challenge #1: Agents for GTM, securing 4th rank in the challenge. The system uses three specialized AI agents orchestrated through Lyzr Agent Studio:
-                </p>
-
-                <!-- 3 Agents Breakdown -->
-                <div class="project-sublist">
-                  <div class="project-subitem">
-                    <strong>Agent 1 – Competitor Finder:</strong> Identifies 3–5 relevant competitors using live web search, company descriptions, business models, and regional context with confidence ratings.
-                  </div>
-                  <div class="project-subitem">
-                    <strong>Agent 2 – Competitor Analyst:</strong> Researches competitor pricing, fees, transfer limits, settlement speeds, and features. Compares current findings against previous observations to identify meaningful changes.
-                  </div>
-                  <div class="project-subitem">
-                    <strong>Agent 3 – Response Options:</strong> Generates strategic recommendations for human review, prioritizing non-price responses and avoiding automatic price matching.
-                  </div>
-                </div>
-
-                <!-- Key Features Pills -->
-                <div class="project-feature-pills" aria-label="Key features">
-                  <span class="feature-pill">Multi-agent orchestration</span>
-                  <span class="feature-pill">Live web search</span>
-                  <span class="feature-pill">Competitor change detection</span>
-                  <span class="feature-pill">ONE-OFF vs. TREND classification</span>
-                  <span class="feature-pill">Human-in-the-loop decision-making</span>
-                  <span class="feature-pill">No automated pricing changes</span>
-                </div>
-
-                <!-- Tech Tags -->
-                <div class="project-tags" aria-label="Technologies used">
-                  <span class="tag">Python</span>
-                  <span class="tag">Lyzr Agent Studio</span>
-                  <span class="tag">HTML</span>
-                  <span class="tag">CSS</span>
-                  <span class="tag">JavaScript</span>
-                </div>
-
-                <!-- Action Buttons -->
-                <div class="project-actions">
-                  <a href="https://competitor-radar-topaz.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" aria-label="View Competitor Radar Live Demo">
-                    <span>Live Demo</span>
-                    <svg class="btn-icon" viewBox="0 0 20 20" width="14" height="14" fill="currentColor" aria-hidden="true">
-                      <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/>
-                      <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- PROJECT 4: RuralCare -->
-          <article class="project-card reveal" data-reveal data-category="full-stack">
-            <div class="project-card-inner">
-              <!-- Visual Mockup Banner -->
-              <div class="project-image-wrap">
-                <div class="project-mockup mockup-rural">
-                  <div class="mockup-pattern" aria-hidden="true"></div>
-                  <div class="mockup-badge">Smart India Hackathon (SIH) &bull; Rural Healthcare</div>
-                  <div class="mockup-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.4">
-                      <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
-                      <line x1="8" y1="2" x2="8" y2="18"></line>
-                      <line x1="16" y1="6" x2="16" y2="22"></line>
-                    </svg>
-                  </div>
-                  <span class="mockup-code-line">OPENSTREETMAP // INVENTORY_SYNC // REACT</span>
-                </div>
-                <div class="project-category-tag">Full-Stack</div>
-              </div>
-
-              <!-- Card Content -->
-              <div class="project-content">
-                <!-- Role Badge: Honest attribution -->
-                <div class="project-role-badge">
-                  <svg viewBox="0 0 20 20" width="14" height="14" fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
-                  </svg>
-                  <span>Role: Team Leader | Primary Technical Contribution: Frontend Development</span>
-                </div>
-
-                <h3 class="project-title">RuralCare – Rural Healthcare Access Platform</h3>
-                <p class="project-description">
-                  RuralCare is a healthcare access platform developed as part of the Smart India Hackathon (SIH), designed to improve healthcare accessibility for rural communities in India.
-                </p>
-
-                <!-- My Contributions Sublist -->
-                <div class="project-sublist">
-                  <div class="project-subitem">Led the project team and coordinated development activities.</div>
-                  <div class="project-subitem">Contributed to frontend development using React.js and JavaScript.</div>
-                  <div class="project-subitem">Designed responsive interfaces for discovering nearby PHCs, CHCs, and district hospitals.</div>
-                  <div class="project-subitem">Developed interfaces for searching and filtering healthcare facilities.</div>
-                  <div class="project-subitem">Built UI components for displaying doctor availability and essential medicine stock.</div>
-                  <div class="project-subitem">Developed interfaces for citizen issue reporting and healthcare facility information.</div>
-                  <div class="project-subitem">Collaborated with team members to integrate frontend components with backend APIs.</div>
-                </div>
-
-                <!-- Tech Tags -->
-                <div class="project-tags" aria-label="Technologies used">
-                  <span class="tag">React.js</span>
-                  <span class="tag">JavaScript</span>
-                  <span class="tag">HTML</span>
-                  <span class="tag">CSS</span>
-                </div>
-
-                <!-- Action Buttons -->
-                <div class="project-actions">
-                  <a href="https://github.com/mansigharat/RuralCare" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" aria-label="View RuralCare source code on GitHub">
-                    <svg class="btn-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
-                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                    </svg>
-                    <span>GitHub</span>
-                  </a>
-                  <a href="https://ruralcare-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" aria-label="Visit RuralCare Live Demo">
-                    <span>Live Demo</span>
-                    <svg class="btn-icon" viewBox="0 0 20 20" width="14" height="14" fill="currentColor" aria-hidden="true">
-                      <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/>
-                      <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. ACHIEVEMENTS SECTION -->
-    <section class="achievements-section section-padding" id="achievements" aria-label="Achievements Section">
-      <div class="container">
-        <div class="section-header text-center reveal" data-reveal>
-          <span class="section-eyebrow">Milestones &amp; Recognition</span>
-          <h2 class="section-title">Key Achievements</h2>
-          <p class="section-desc">
-            Demonstrated technical excellence, autonomous agent design, and engineering team leadership.
-          </p>
-        </div>
-
-        <div class="achievements-grid">
-          <!-- Achievement 1: 4th Rank - Lyzr AI Weekly Challenge #1 -->
-          <article class="achievement-card reveal" data-reveal>
-            <div class="achievement-card-inner">
-              <div class="achievement-header">
-                <div class="achievement-icon-wrapper" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8">
-                    <circle cx="12" cy="8" r="7"></circle>
-                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
-                  </svg>
-                </div>
-                <span class="achievement-category">Agents for GTM / Agentic AI</span>
-              </div>
-              <h3 class="achievement-title">4th Rank – Lyzr AI Weekly Challenge #1</h3>
-              <p class="achievement-desc">
-                Secured 4th rank with Competitor Radar, an AI-powered competitive intelligence system built using three specialized AI agents.
-              </p>
-              <div class="achievement-footer">
-                <span class="achievement-meta">Project: Competitor Radar</span>
-                <a href="https://competitor-radar-topaz.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-link" aria-label="View Competitor Radar Live Demo">
-                  <span>Live Demo</span>
-                  <svg viewBox="0 0 20 20" width="14" height="14" fill="currentColor" aria-hidden="true">
-                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/>
-                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Achievement 2: Team Leader - Smart India Hackathon (SIH) -->
-          <article class="achievement-card reveal" data-reveal>
-            <div class="achievement-card-inner">
-              <div class="achievement-header">
-                <div class="achievement-icon-wrapper" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8">
-                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="9" cy="7" r="4"></circle>
-                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                  </svg>
-                </div>
-                <span class="achievement-category">National Hackathon / Leadership</span>
-              </div>
-              <h3 class="achievement-title">Team Leader – Smart India Hackathon (SIH)</h3>
-              <p class="achievement-desc">
-                Led the team in developing a rural healthcare access platform, with my primary technical contribution focused on frontend development.
-              </p>
-              <div class="achievement-footer">
-                <span class="achievement-meta">Project: RuralCare</span>
-                <a href="#projects" class="text-link" aria-label="View RuralCare project details">
-                  <span>View Project</span>
-                  <svg viewBox="0 0 20 20" width="14" height="14" fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6. CONTACT SECTION -->
-    <section class="contact-section section-padding" id="contact" aria-label="Contact Section">
-      <div class="container">
-        <div class="section-header text-center reveal" data-reveal>
-          <span class="section-eyebrow">Initiate Contact</span>
-          <h2 class="section-title">Get in Touch</h2>
-          <p class="section-desc">
-            Have a project in mind, an internship opportunity, or wish to discuss backend and AI engineering? Let's connect.
-          </p>
-        </div>
-
-        <div class="contact-grid">
-          <!-- Contact Channels Info Column -->
-          <div class="contact-info reveal" data-reveal>
-            <h3 class="contact-info-title">Let's build something exceptional together</h3>
-            <p class="contact-info-desc">
-              I'm open to Backend Development and AI Engineering internships, open-source collaborations, and opportunities to work on meaningful software projects.
-            </p>
-
-            <div class="contact-methods">
-              <!-- Email Card -->
-              <a href="mailto:mansigharat1909@gmail.com" class="contact-method-card">
-                <div class="method-icon-box" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
-                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                  </svg>
-                </div>
-                <div class="method-details">
-                  <span class="method-label">Direct Email</span>
-                  <span class="method-value">mansigharat1909@gmail.com</span>
-                </div>
-                <div class="method-arrow" aria-hidden="true">&rarr;</div>
-              </a>
-
-              <!-- LinkedIn Card -->
-              <a href="https://www.linkedin.com/in/mansigharat/" target="_blank" rel="noopener noreferrer" class="contact-method-card">
-                <div class="method-icon-box" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                  </svg>
-                </div>
-                <div class="method-details">
-                  <span class="method-label">LinkedIn Profile</span>
-                  <span class="method-value">linkedin.com/in/mansigharat</span>
-                </div>
-                <div class="method-arrow" aria-hidden="true">&rarr;</div>
-              </a>
-
-              <!-- GitHub Card -->
-              <a href="https://github.com/mansigharat/" target="_blank" rel="noopener noreferrer" class="contact-method-card">
-                <div class="method-icon-box" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
-                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                  </svg>
-                </div>
-                <div class="method-details">
-                  <span class="method-label">GitHub Repositories</span>
-                  <span class="method-value">github.com/mansigharat</span>
-                </div>
-                <div class="method-arrow" aria-hidden="true">&rarr;</div>
-              </a>
-            </div>
-
-            <!-- Fast Copy Email Action -->
-            <div class="copy-email-box">
-              <span class="copy-label">Quick Copy:</span>
-              <button type="button" class="btn-copy-email" id="copyEmailBtn" aria-label="Copy email address to clipboard">
-                <span id="copyEmailText">mansigharat1909@gmail.com</span>
-                <span class="copy-feedback" id="copyFeedback" aria-live="polite"></span>
-                <svg class="copy-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                </svg>
-              </button>
-            </div>
-          </div>
-
-          <!-- Contact Form Column -->
-          <div class="contact-form-wrap reveal" data-reveal>
-            <!-- 
-              ==========================================================
-              BACKEND FORM SUBMISSION NOTE:
-              This form is equipped with full client-side validation.
-              To connect real email submissions:
-              - FORMSPREE: Add action="https://formspree.io/f/YOUR_FORM_ID" method="POST"
-              - NETLIFY: Add name="contact" netlify data-netlify="true" netlify-honeypot="bot-field"
-              ==========================================================
-            -->
-            <form class="contact-form" id="contactForm" novalidate>
-              <div class="form-header">
-                <h3 class="form-title">Send a Direct Message</h3>
-                <p class="form-subtitle">All inquiries receive a response within 24 hours.</p>
-              </div>
-
-              <!-- Full Name Field -->
-              <div class="form-group" id="groupName">
-                <label for="contactName" class="form-label">
-                  Your Name <span class="required" aria-hidden="true">*</span>
-                </label>
-                <div class="input-wrapper">
-                  <input 
-                    type="text" 
-                    id="contactName" 
-                    name="name" 
-                    class="form-control" 
-                    placeholder="e.g. John Doe" 
-                    required 
-                    autocomplete="name"
-                    aria-required="true"
-                    aria-describedby="nameError"
-                  >
-                </div>
-                <span class="form-error" id="nameError" aria-live="polite"></span>
-              </div>
-
-              <!-- Email Field -->
-              <div class="form-group" id="groupEmail">
-                <label for="contactEmail" class="form-label">
-                  Your Email Address <span class="required" aria-hidden="true">*</span>
-                </label>
-                <div class="input-wrapper">
-                  <input 
-                    type="email" 
-                    id="contactEmail" 
-                    name="email" 
-                    class="form-control" 
-                    placeholder="e.g. john@company.com" 
-                    required 
-                    autocomplete="email"
-                    aria-required="true"
-                    aria-describedby="emailError"
-                  >
-                </div>
-                <span class="form-error" id="emailError" aria-live="polite"></span>
-              </div>
-
-              <!-- Message Field -->
-              <div class="form-group" id="groupMessage">
-                <label for="contactMessage" class="form-label">
-                  Message <span class="required" aria-hidden="true">*</span>
-                </label>
-                <div class="input-wrapper">
-                  <textarea 
-                    id="contactMessage" 
-                    name="message" 
-                    class="form-control form-textarea" 
-                    rows="5" 
-                    placeholder="Tell me about your project, role, or ideas..." 
-                    required 
-                    aria-required="true"
-                    aria-describedby="messageError"
-                  ></textarea>
-                </div>
-                <span class="form-error" id="messageError" aria-live="polite"></span>
-              </div>
-
-              <!-- Submit Button -->
-              <div class="form-action">
-                <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
-                  <span class="btn-text">Transmit Message</span>
-                  <svg class="btn-icon" viewBox="0 0 20 20" width="16" height="16" fill="currentColor" aria-hidden="true">
-                    <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/>
-                  </svg>
-                </button>
-              </div>
-
-              <!-- Success Notification Box (Initially Hidden) -->
-              <div class="form-success" id="formSuccess" role="alert" aria-live="assertive" hidden>
-                <div class="success-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                  </svg>
-                </div>
-                <div class="success-content">
-                  <h4 class="success-title">Message Delivered Successfully</h4>
-                  <p class="success-desc">Thank you for reaching out, Mansi will review your note and respond promptly.</p>
-                  <button type="button" class="btn btn-outline btn-sm reset-form-btn" id="resetFormBtn">Send Another Message</button>
-                </div>
-              </div>
-            </form>
-          </div>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- 6. FOOTER -->
-  <footer class="site-footer" id="siteFooter">
-    <div class="container footer-container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a href="#hero" class="brand-logo" aria-label="Back to top">
-            <span class="brand-monogram">MG</span>
-            <span class="brand-name">Mansi Gharat</span>
-          </a>
-          <p class="footer-motto">
-            Architecting intelligent backend systems &amp; elegant software solutions.
-          </p>
-        </div>
-
-        <!-- Social Links with Accessible Inline SVGs -->
-        <div class="footer-socials" aria-label="Social Profiles">
-          <a href="https://github.com/mansigharat/" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="GitHub Profile">
-            <svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
-              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-            </svg>
-          </a>
-          <a href="https://www.linkedin.com/in/mansigharat/" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="LinkedIn Profile">
-            <svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
-              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-            </svg>
-          </a>
-          <a href="mailto:mansigharat1909@gmail.com" class="social-circle" aria-label="Email Mansi Gharat">
-            <svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
-              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p class="copyright">
-          &copy; <span id="currentYear">2026</span> Mansi Gharat. All rights reserved.
-        </p>
-        <p class="footer-credit">
-          Crafted with pure HTML, CSS &amp; Vanilla JavaScript.
-        </p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Floating Back to Top Button -->
-  <button type="button" class="back-to-top" id="backToTop" aria-label="Back to top of page">
-    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-      <polyline points="18 15 12 9 6 15"></polyline>
-    </svg>
-  </button>
-
-  <!-- Main JavaScript File -->
-  <script src="script.js"></script>
+  <!-- Entry Script -->
+  <script type="module" src="./src/scripts/main.js"></script>
 </body>
 </html>

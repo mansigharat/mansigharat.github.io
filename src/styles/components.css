@@ -1,0 +1,455 @@
+/* ==========================================================================
+   COMPONENTS: CURSOR, LOADER, FLOATING PILL NAVBAR, BUTTONS
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CUSTOM CURSOR (Desktop only)
+   -------------------------------------------------------------------------- */
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.15s ease-out;
+}
+
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent);
+}
+
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255, 77, 46, 0.45);
+  transition: width 0.3s var(--ease-editorial), height 0.3s var(--ease-editorial),
+              border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover Growth State */
+body.cursor-hover .cursor-ring {
+  width: 58px;
+  height: 58px;
+  border-color: var(--accent);
+  background-color: rgba(255, 77, 46, 0.08);
+}
+
+/* Hide on touch devices and reduced motion */
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. INTRO LOADER
+   -------------------------------------------------------------------------- */
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: var(--ink);
+  color: var(--white);
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(2rem, 5vw, 4rem);
+  pointer-events: all;
+  transition: transform 0.85s cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+.loader-overlay.loaded {
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+.loader-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.loader-brand {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.loader-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  display: inline-block;
+  animation: pulse-dot 1.2s infinite ease-in-out;
+}
+
+.loader-center {
+  margin: auto 0;
+}
+
+.loader-name {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 14vw, 13rem);
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  color: var(--white);
+}
+
+.loader-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.loader-role {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-on-dark-muted);
+}
+
+.loader-counter {
+  font-family: var(--font-mono);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 700;
+  line-height: 0.9;
+  color: var(--accent);
+}
+
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+}
+
+/* --------------------------------------------------------------------------
+   3. FLOATING PILL NAVBAR
+   -------------------------------------------------------------------------- */
+.header-nav-wrap {
+  position: fixed;
+  top: 1.5rem;
+  left: 0;
+  width: 100%;
+  z-index: 9990;
+  pointer-events: none;
+}
+
+.header-nav-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* Left Brand Wordmark */
+.nav-wordmark {
+  pointer-events: auto;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.15rem;
+  border-radius: 999px;
+  background: rgba(10, 10, 10, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--white);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.nav-wordmark:hover {
+  border-color: var(--accent);
+}
+
+.nav-wordmark .brand-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent);
+}
+
+/* Center Pill Nav Bar */
+.floating-navbar {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  padding: 0.35rem 0.45rem;
+  background: rgba(10, 10, 10, 0.82);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+  transition: background-color var(--transition-medium), border-color var(--transition-medium);
+}
+
+/* Pill when over light sections: invert cleanly to ensure contrast */
+.header-nav-wrap.nav-theme-light .floating-navbar {
+  background: rgba(238, 236, 231, 0.9);
+  border-color: rgba(10, 10, 10, 0.15);
+  box-shadow: 0 12px 36px rgba(10, 10, 10, 0.1);
+}
+
+.header-nav-wrap.nav-theme-light .nav-wordmark {
+  background: rgba(238, 236, 231, 0.9);
+  border-color: rgba(10, 10, 10, 0.15);
+  color: var(--ink);
+}
+
+.header-nav-wrap.nav-theme-light .nav-icon-btn {
+  background: rgba(238, 236, 231, 0.9);
+  border-color: rgba(10, 10, 10, 0.15);
+  color: var(--ink);
+}
+
+.nav-pill-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 0.2rem;
+}
+
+.nav-pill-link {
+  display: block;
+  padding: 0.5rem 0.95rem;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text-on-dark-muted);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.header-nav-wrap.nav-theme-light .nav-pill-link {
+  color: var(--text-on-light-muted);
+}
+
+.nav-pill-link:hover {
+  color: var(--white);
+}
+
+.header-nav-wrap.nav-theme-light .nav-pill-link:hover {
+  color: var(--ink);
+}
+
+/* Active Nav Pill State: Inverts to match theme */
+.nav-pill-link.active {
+  background-color: var(--white);
+  color: var(--ink);
+}
+
+.header-nav-wrap.nav-theme-light .nav-pill-link.active {
+  background-color: var(--ink);
+  color: var(--white);
+}
+
+/* Right Social Buttons */
+.nav-socials {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 10, 10, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--white);
+  text-decoration: none;
+  transition: border-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+}
+
+.nav-icon-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.nav-icon-btn svg {
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
+}
+
+/* Mobile Nav Toggle */
+.mobile-nav-toggle {
+  display: none;
+  pointer-events: auto;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(10, 10, 10, 0.85);
+  color: var(--white);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.header-nav-wrap.nav-theme-light .mobile-nav-toggle {
+  border-color: rgba(10, 10, 10, 0.15);
+  background: rgba(238, 236, 231, 0.9);
+  color: var(--ink);
+}
+
+/* Mobile Drawer: HIDDEN BY DEFAULT GLOBALLY (prevents unstyled desktop links) */
+.mobile-drawer {
+  display: none;
+}
+
+@media (max-width: 960px) {
+  .floating-navbar {
+    display: none;
+  }
+  .mobile-nav-toggle {
+    display: flex;
+  }
+  
+  /* Mobile Drawer */
+  .mobile-drawer {
+    display: none;
+    position: fixed;
+    top: 5rem;
+    left: var(--gutter);
+    right: var(--gutter);
+    background: var(--ink-soft);
+    border: 1px solid var(--line-dark);
+    border-radius: 20px;
+    padding: 1.5rem;
+    z-index: 9995;
+    pointer-events: auto;
+    flex-direction: column;
+    gap: 0.8rem;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+  }
+  
+  .mobile-drawer.open {
+    display: flex;
+  }
+  
+  .mobile-drawer a {
+    color: var(--white);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    border: 1px solid transparent;
+  }
+  
+  .mobile-drawer a:hover,
+  .mobile-drawer a.active {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--line-dark);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. BUTTONS & PILLS
+   -------------------------------------------------------------------------- */
+.btn-pill {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-pill-primary {
+  background-color: var(--ink);
+  color: var(--white);
+  border: 1px solid var(--ink);
+}
+
+.theme-dark .btn-pill-primary {
+  background-color: var(--white);
+  color: var(--ink);
+  border: 1px solid var(--white);
+}
+
+.btn-pill-primary:hover {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.btn-pill-outline {
+  background-color: transparent;
+  color: inherit;
+  border: 1px solid currentColor;
+}
+
+.btn-pill-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.btn-pill-accent {
+  background-color: var(--accent);
+  color: var(--white);
+  border: 1px solid var(--accent);
+}
+
+.btn-pill-accent:hover {
+  background-color: var(--ink);
+  border-color: var(--ink);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* Tags and Chips */
+.tag-pill {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+  opacity: 0.85;
+}
