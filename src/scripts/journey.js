@@ -16,8 +16,8 @@ export function initJourney() {
 
   if (!section || !scrollContainer) return;
 
-  // Reduced motion or small screens fallback
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || window.innerWidth < 800) {
+  // Reduced motion or small/tablet screens fallback (matches 960px CSS breakpoint)
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || window.innerWidth <= 960) {
     scrollContainer.style.overflowX = 'auto';
     scrollContainer.style.scrollSnapType = 'x mandatory';
     return;

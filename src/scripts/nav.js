@@ -45,15 +45,14 @@ export function initNav(lenis) {
     });
   });
 
-  // Active section & theme detection on scroll
+  // Active section & theme detection on scroll (using getBoundingClientRect so GSAP pin-spacers work accurately)
   function updateNav() {
-    const scrollPosition = window.scrollY + window.innerHeight * 0.35;
+    const triggerY = window.innerHeight * 0.35;
     let currentSection = sections[0];
 
     sections.forEach((section) => {
-      const top = section.offsetTop;
-      const height = section.offsetHeight;
-      if (scrollPosition >= top && scrollPosition < top + height) {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= triggerY && rect.bottom > triggerY) {
         currentSection = section;
       }
     });

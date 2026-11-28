@@ -8,14 +8,15 @@ import { initNav } from './nav.js';
 import { initFlowField } from './flowfield.js';
 import { initJourney } from './journey.js';
 import { initProjects3D } from './projects3d.js';
+import { initReveal } from './reveal.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener('DOMContentLoaded', () => {
-  // ── STEP 1: Run the loader FIRST, everything else waits inside its callback ──
+  // ── Loader runs FIRST — everything else inside its callback ─────────────
   initLoader(() => {
     try {
-      // ── STEP 2: Smooth scroll (Lenis) ──
+      // ── Smooth scroll ───────────────────────────────────────────────────
       let lenis = null;
       const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -37,55 +38,55 @@ document.addEventListener('DOMContentLoaded', () => {
         gsap.ticker.lagSmoothing(0);
       }
 
-      // ── STEP 3: Sub-systems (heavy canvas + GSAP pins) ──
+      // ── Sub-systems ─────────────────────────────────────────────────────
       initCursor();
       initNav(lenis);
       initFlowField();
       initJourney();
       initProjects3D();
+      initReveal();
       initHeroParallax();
+      initScrollToTop(lenis);
+      initFooterYear();
 
-      // ── STEP 4: Back To Top ──
-      document.querySelector('.btn-back-to-top')?.addEventListener('click', (e) => {
-        e.preventDefault();
-        if (lenis) {
-          lenis.scrollTo(0, { duration: 1.5 });
-        } else {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-      });
-
-      // ── STEP 5: Hero entrance animations (run after loader reveal) ──
-      gsap.from('.hero-badge', {
-        y: 30,
-        opacity: 0,
-        duration: 0.9,
-        ease: 'power3.out'
-      });
-      gsap.from('.hero-giant-text', {
-        y: 60,
-        opacity: 0,
-        duration: 1.1,
-        delay: 0.1,
-        ease: 'power3.out'
-      });
-      gsap.from('.hero-supporting-text', {
-        y: 40,
-        opacity: 0,
-        duration: 1.0,
-        delay: 0.25,
-        ease: 'power3.out'
-      });
-      gsap.from('.hero-cta-group', {
-        y: 30,
-        opacity: 0,
-        duration: 1.0,
-        delay: 0.35,
-        ease: 'power3.out'
-      });
+      // ── Hero entrance animations (run once after loader reveal) ─────────
+      if (!isReducedMotion) {
+        gsap.from('.hero-badge', {
+          y: 24,
+          opacity: 0,
+          duration: 0.85,
+          ease: 'power3.out'
+        });
+        gsap.from('.hero-giant-text', {
+          y: 55,
+          opacity: 0,
+          duration: 1.1,
+          delay: 0.1,
+          ease: 'power3.out'
+        });
+        gsap.from('.hero-supporting-text', {
+          y: 36,
+          opacity: 0,
+          duration: 1.0,
+          delay: 0.22,
+          ease: 'power3.out'
+        });
+        gsap.from('.hero-cta-group', {
+          y: 28,
+          opacity: 0,
+          duration: 1.0,
+          delay: 0.32,
+          ease: 'power3.out'
+        });
+        gsap.from('.hero-bottom-bar', {
+          opacity: 0,
+          duration: 1.2,
+          delay: 0.5,
+          ease: 'power2.out'
+        });
+      }
 
     } catch (err) {
-      // If anything in here crashes, log it but don't freeze the page
       console.error('[main] Post-loader init error:', err);
     }
   });
@@ -112,7 +113,7 @@ function initHeroParallax() {
   heroSection.addEventListener('mousemove', (e) => {
     const { clientX, clientY } = e;
     const { innerWidth, innerHeight } = window;
-    targetMouseX = (clientX / innerWidth - 0.5) * 2; // -1 to 1
+    targetMouseX = (clientX / innerWidth - 0.5) * 2;
     targetMouseY = (clientY / innerHeight - 0.5) * 2;
   });
 
@@ -129,7 +130,7 @@ function initHeroParallax() {
   }
   requestAnimationFrame(updateHeroParallax);
 
-  // Subtle scroll parallax with GSAP
+  // Scroll parallax
   gsap.to(heroText, {
     y: 80,
     ease: 'none',
@@ -140,4 +141,44 @@ function initHeroParallax() {
       scrub: true
     }
   });
+}
+
+/**
+ * Back-to-top button
+ */
+function initScrollToTop(lenis) {
+  const btn = document.querySelector('.btn-back-to-top');
+  if (!btn) return;
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (lenis) {
+      lenis.scrollTo(0, { duration: 1.5 });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  });
+
+  // Also wire up the scroll indicator in hero
+  const scrollIndicator = document.querySelector('.hero-scroll-indicator');
+  if (scrollIndicator) {
+    scrollIndicator.addEventListener('click', () => {
+      const aboutSection = document.querySelector('#about');
+      if (!aboutSection) return;
+      if (lenis) {
+        lenis.scrollTo(aboutSection, { offset: -60, duration: 1.4 });
+      } else {
+        aboutSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+}
+
+/**
+ * Dynamic footer year — no hardcoded dates
+ */
+function initFooterYear() {
+  const yearEl = document.querySelector('.footer-year');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
 }
