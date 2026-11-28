@@ -233,8 +233,9 @@
   position: relative;
   background-color: var(--ink);
   color: var(--white);
-  overflow: hidden;
-  padding: clamp(6rem, 10vw, 10rem) 0 4rem;
+  overflow-x: clip;    /* clips horizontal bleed only, not vertical */
+  overflow-y: visible; /* lets card bottoms (shadows + actions) breathe */
+  padding: clamp(6rem, 10vw, 10rem) 0 6rem;
 }
 
 .journey-header {
@@ -285,7 +286,7 @@
 .journey-scroll-container {
   display: flex;
   gap: clamp(2rem, 5vw, 4.5rem);
-  padding: 2rem 0;
+  padding: 2rem 0 5rem; /* extra bottom padding so card shadows + actions show */
   will-change: transform;
 }
 

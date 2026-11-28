@@ -12,78 +12,82 @@ import { initProjects3D } from './projects3d.js';
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Initialize Lenis Smooth Scrolling
-  let lenis = null;
-  const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  if (!isReducedMotion) {
-    lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: 'vertical',
-      smoothWheel: true,
-      wheelMultiplier: 1.05
-    });
-
-    lenis.on('scroll', ScrollTrigger.update);
-
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000);
-    });
-
-    gsap.ticker.lagSmoothing(0);
-  }
-
-  // 2. Initialize Subsystems
-  initCursor();
-  initNav(lenis);
-  initFlowField();
-  initJourney();
-  initProjects3D();
-
-  // 3. Hero Parallax Interactivity
-  initHeroParallax();
-
-  // 4. Back To Top
-  document.querySelector('.btn-back-to-top')?.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (lenis) {
-      lenis.scrollTo(0, { duration: 1.5 });
-    } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  });
-
-  // 5. Run Intro Loader
+  // ── STEP 1: Run the loader FIRST, everything else waits inside its callback ──
   initLoader(() => {
-    // Entrance animations after loader disappears
-    gsap.from('.hero-badge', {
-      y: 30,
-      opacity: 0,
-      duration: 0.9,
-      ease: 'power3.out'
-    });
-    gsap.from('.hero-giant-text', {
-      y: 60,
-      opacity: 0,
-      duration: 1.1,
-      delay: 0.1,
-      ease: 'power3.out'
-    });
-    gsap.from('.hero-supporting-text', {
-      y: 40,
-      opacity: 0,
-      duration: 1.0,
-      delay: 0.25,
-      ease: 'power3.out'
-    });
-    gsap.from('.hero-cta-group', {
-      y: 30,
-      opacity: 0,
-      duration: 1.0,
-      delay: 0.35,
-      ease: 'power3.out'
-    });
+    try {
+      // ── STEP 2: Smooth scroll (Lenis) ──
+      let lenis = null;
+      const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (!isReducedMotion) {
+        lenis = new Lenis({
+          duration: 1.2,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          orientation: 'vertical',
+          smoothWheel: true,
+          wheelMultiplier: 1.05
+        });
+
+        lenis.on('scroll', ScrollTrigger.update);
+
+        gsap.ticker.add((time) => {
+          lenis.raf(time * 1000);
+        });
+
+        gsap.ticker.lagSmoothing(0);
+      }
+
+      // ── STEP 3: Sub-systems (heavy canvas + GSAP pins) ──
+      initCursor();
+      initNav(lenis);
+      initFlowField();
+      initJourney();
+      initProjects3D();
+      initHeroParallax();
+
+      // ── STEP 4: Back To Top ──
+      document.querySelector('.btn-back-to-top')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (lenis) {
+          lenis.scrollTo(0, { duration: 1.5 });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      });
+
+      // ── STEP 5: Hero entrance animations (run after loader reveal) ──
+      gsap.from('.hero-badge', {
+        y: 30,
+        opacity: 0,
+        duration: 0.9,
+        ease: 'power3.out'
+      });
+      gsap.from('.hero-giant-text', {
+        y: 60,
+        opacity: 0,
+        duration: 1.1,
+        delay: 0.1,
+        ease: 'power3.out'
+      });
+      gsap.from('.hero-supporting-text', {
+        y: 40,
+        opacity: 0,
+        duration: 1.0,
+        delay: 0.25,
+        ease: 'power3.out'
+      });
+      gsap.from('.hero-cta-group', {
+        y: 30,
+        opacity: 0,
+        duration: 1.0,
+        delay: 0.35,
+        ease: 'power3.out'
+      });
+
+    } catch (err) {
+      // If anything in here crashes, log it but don't freeze the page
+      console.error('[main] Post-loader init error:', err);
+    }
   });
 });
 
